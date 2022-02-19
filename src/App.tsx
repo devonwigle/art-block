@@ -1,18 +1,24 @@
-import React, {Component} from 'react';
-import './App.css';
-import Logo from "./Components/Logo/Logo"
+import React, { Component } from "react";
+import "./App.css";
+import Logo from "./Components/Logo/Logo";
+import InspoContainer from "./Components/InspoContainer/InspoContainer";
+import PictureContainer from "./Components/PictureContainer./PictureContainer";
+import WordContainer from "./Components/WordContainer/WordContainer";
 
 class App extends Component {
   constructor(props: any) {
-    super(props)
+    super(props);
   }
-  render() :  JSX.Element {
+  render(): JSX.Element {
     return (
-    <div className="App">
-     <Logo />
-    </div>
-  );
-}
+      <div className="App">
+        <Logo />
+        <InspoContainer />
+        <PictureContainer />
+        <WordContainer />
+      </div>
+    );
+  }
 }
 
 export default App;
