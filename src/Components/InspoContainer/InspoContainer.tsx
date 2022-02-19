@@ -2,14 +2,19 @@ import React from "react";
 import PictureContainer from "../PictureContainer./PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
 import "./InspoContainer.css";
+import { Image } from "../../apiCalls/apiCalls";
 
-const InspoContainer = () => {
+type InspoContainerProps = {
+  picture: Image;
+};
+
+const InspoContainer = (props: InspoContainerProps) => {
   return (
     <div className="Inspo-container">
       Container!
       <p>HEXCODE!</p>
       <div className="contents">
-        <PictureContainer />
+        <PictureContainer picture={props.picture} />
         <WordContainer />
       </div>
       <div className="buttons">
