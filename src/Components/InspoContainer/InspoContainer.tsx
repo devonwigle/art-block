@@ -1,5 +1,5 @@
 import React from "react";
-import PictureContainer from "../PictureContainer./PictureContainer";
+import PictureContainer from "../PictureContainer/PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
 import "./InspoContainer.css";
 import { Image } from "../../apiCalls/apiCalls";

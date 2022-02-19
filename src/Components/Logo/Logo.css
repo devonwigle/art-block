@@ -1,18 +1,23 @@
 .top-line {
   font-family: "Tangerine", cursive;
-  color: #e3d5ca;
-  font-size: 50px;
+  color: #000;
+  font-size: 144px;
+  font-weight: 400;
   margin: 0;
 }
 
 .top-line-2 {
-  font-family: "Courier New", Courier, monospace;
-  color: #d5bdaf;
-  font-weight: 600;
-  font-size: 75px;
+  font-family: "Ubuntu", sans-serif;
+  color: #000;
+  font-weight: 400;
+  font-size: 144px;
   margin: 0;
 }
 
 .bottom-line {
-  margin: 0;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  font-weight: 300;
+  font-size: 36px;
+  margin-top: -31px;
 }
