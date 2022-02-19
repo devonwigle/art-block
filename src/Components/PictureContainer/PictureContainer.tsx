@@ -1,4 +1,5 @@
 import { Image } from "../../apiCalls/apiCalls";
+import "./PictureContainer.css"
 
 type PictureContainerProps = {
   picture: Image;
