@@ -1,0 +1,11 @@
+.contents {
+  display: flex;
+  justify-content: space-around;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+}

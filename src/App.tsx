@@ -14,8 +14,6 @@ class App extends Component {
       <div className="App">
         <Logo />
         <InspoContainer />
-        <PictureContainer />
-        <WordContainer />
       </div>
     );
   }
