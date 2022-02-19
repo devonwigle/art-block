@@ -11,14 +11,15 @@ class App extends Component<any, AppState> {
   constructor(props: any) {
     super(props);
     this.state = {
-      idNum: 55,
+      idNum: 0,
       image: null,
       color: '',
     };
   }
 
   componentDidMount() {
-    getImage(237).then((result) => this.setState({ image: result }));
+    let randNum = Math.floor(Math.random() * 1084);
+    getImage(randNum).then((result) => this.setState({ image: result }));
   }
 
   renderInspoContainer() {

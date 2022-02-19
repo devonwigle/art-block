@@ -13,9 +13,6 @@ type InspoContainerProps = {
 const InspoContainer = (props: InspoContainerProps) => {
   return (
     <div className="Inspo-container">
-      {/* <div className="color-container">
-      <p>HEXCODE!</p>
-      </div> */}
       <div className="contents">
         <PictureContainer picture={props.picture} />
         <WordContainer />

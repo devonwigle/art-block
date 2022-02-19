@@ -4,7 +4,7 @@ import './ColorContainer'
 import CSS from 'csstype';
 
 let colorStyles: CSS.Properties = {
-  backgroundColor: `${randomColor({hue: 'random',luminosity: 'random',count: 1})[0]}`,
+  backgroundColor: `${randomColor({luminosity: 'random',count: 1})[0]}`,
   height: '200px',
   width: '300px'
 }
