@@ -1,26 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import "./App.css";
+import Logo from "./Components/Logo/Logo";
+import InspoContainer from "./Components/InspoContainer/InspoContainer";
+import getImage, { Image } from "./apiCalls/apiCalls";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+type AppState = { idNum: number; image: Image | null };
+
+class App extends Component<any, AppState> {
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      idNum: 55,
+      image: null,
+    };
+  }
+
+  componentDidMount() {
+    getImage(237).then((result) => this.setState({ image: result }));
+  }
+
+  renderInspoContainer() {
+    if (this.state.image === null) {
+      return "Potato";
+    } else {
+      return <InspoContainer picture={this.state.image} />;
+    }
+  }
+
+  render(): JSX.Element {
+    return (
+      <div className="App">
+        <Logo />
+        {this.renderInspoContainer()}
+      </div>
+    );
+  }
 }
 
 export default App;
