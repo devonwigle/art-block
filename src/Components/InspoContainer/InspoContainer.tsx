@@ -3,19 +3,20 @@ import PictureContainer from "../PictureContainer/PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
 import "./InspoContainer.css";
 import { Image } from "../../apiCalls/apiCalls";
+import ColorContainer from '../ColorContainer/ColorContainer';
 
 type InspoContainerProps = {
   picture: Image;
 };
 
+
 const InspoContainer = (props: InspoContainerProps) => {
   return (
     <div className="Inspo-container">
-      Container!
-      <p>HEXCODE!</p>
       <div className="contents">
         <PictureContainer picture={props.picture} />
         <WordContainer />
+        <ColorContainer />
       </div>
       <div className="buttons">
         <button>REINSPIRE</button>

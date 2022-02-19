@@ -4,7 +4,7 @@ export type Image = {
 };
 
 const getImage = async (id: number): Promise<Image> => {
-  const newImage = fetch(`https://picsum.photos/id/10/info`)
+  const newImage = fetch(`https://picsum.photos/id/${id}/info`)
     .then((response) => {
       return response.json();
     })
