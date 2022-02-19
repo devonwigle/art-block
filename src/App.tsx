@@ -4,7 +4,8 @@ import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
 import getImage, { Image } from "./apiCalls/apiCalls";
 
-type AppState = { idNum: number; image: Image | null };
+
+type AppState = { idNum: number; image: Image | null; color: string };
 
 class App extends Component<any, AppState> {
   constructor(props: any) {
@@ -12,6 +13,7 @@ class App extends Component<any, AppState> {
     this.state = {
       idNum: 55,
       image: null,
+      color: '',
     };
   }
 
