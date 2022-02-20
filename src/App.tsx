@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Route, Link, Switch, RouteComponentProps } from "react-router-dom"
 import "./App.css";
 import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
@@ -33,13 +34,19 @@ class App extends Component<any, AppState> {
   render(): JSX.Element {
     return (
       <div className="App">
-        <LandingPage />
-        {/* <Logo />
-        <InspoContainer
-          onClick={() => this.generateRandomState()}
-          color={this.state.color}
-          picture={this.state.image}
-        /> */}
+        <Switch>
+          <Route exact path="/">
+            <LandingPage />
+          </Route>
+          <Route exact path="/inspiration">
+            <Logo />
+            <InspoContainer
+              onClick={() => this.generateRandomState()}
+              color={this.state.color}
+              picture={this.state.image}
+            />
+          </Route>
+        </Switch>
       </div>
     );
   }
