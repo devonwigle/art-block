@@ -6,8 +6,9 @@ import InspoContainer from "./Components/InspoContainer/InspoContainer";
 import getImage, { Image } from "./apiCalls/apiCalls";
 import randomColor from "randomcolor";
 import LandingPage from "./Components/LandingPage/LandingPage"
+import FavoritesContainer from "./Components/FavoritesContainer/FavoritesContainer";
 
-type AppState = { idNum: number; image: Image | null; color: string };
+type AppState = { idNum: number; image: Image | null; color: string; word: string };
 
 class App extends Component<any, AppState> {
   constructor(props: any) {
@@ -16,6 +17,7 @@ class App extends Component<any, AppState> {
       idNum: 0,
       image: null,
       color: "#FFF",
+      word: '',
     };
   }
 
@@ -45,6 +47,9 @@ class App extends Component<any, AppState> {
               color={this.state.color}
               picture={this.state.image}
             />
+          </Route>
+          <Route exact path="/favorites">
+            <FavoritesContainer props={this.state}/>
           </Route>
         </Switch>
       </div>
