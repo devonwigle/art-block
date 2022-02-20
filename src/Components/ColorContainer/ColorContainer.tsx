@@ -1,22 +1,22 @@
-import React from 'react';
-import randomColor from "randomcolor";
-import './ColorContainer'
-import CSS from 'csstype';
+import "./ColorContainer.css";
+import CSS from "csstype";
 
-let colorStyles: CSS.Properties = {
-  backgroundColor: `${randomColor({luminosity: 'random',count: 1})[0]}`,
-  height: '200px',
-  width: '300px'
-}
+type ColorContainerProps = {
+  color: string;
+};
 
-function ColorContainer() {
+function ColorContainer(props: ColorContainerProps) {
+  const colorStyles: CSS.Properties = {
+    backgroundColor: props.color,
+    height: "200px",
+    width: "300px",
+  };
   return (
     <div>
-      <div className="color-box" style={colorStyles}> 
-      </div>
-      <p>{colorStyles.backgroundColor}</p>
+      <div className="color-box" style={colorStyles}></div>
+      <p className="hexcode">{colorStyles.backgroundColor}</p>
     </div>
-  )
+  );
 }
 
-export default ColorContainer
+export default ColorContainer;

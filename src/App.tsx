@@ -3,7 +3,7 @@ import "./App.css";
 import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
 import getImage, { Image } from "./apiCalls/apiCalls";
-
+import randomColor from "randomcolor";
 
 type AppState = { idNum: number; image: Image | null; color: string };
 
@@ -13,28 +13,31 @@ class App extends Component<any, AppState> {
     this.state = {
       idNum: 0,
       image: null,
-      color: '',
+      color: "#FFF",
     };
   }
 
   componentDidMount() {
-    let randNum = Math.floor(Math.random() * 1084);
-    getImage(randNum).then((result) => this.setState({ image: result }));
+    this.generateRandomState();
   }
 
-  renderInspoContainer() {
-    if (this.state.image === null) {
-      return "Potato";
-    } else {
-      return <InspoContainer picture={this.state.image} />;
-    }
+  generateRandomState() {
+    let randNum = Math.floor(Math.random() * 1084);
+    getImage(randNum).then((result) => this.setState({ image: result }));
+    this.setState({
+      color: `${randomColor({ luminosity: "random", count: 1 })[0]}`,
+    });
   }
 
   render(): JSX.Element {
     return (
       <div className="App">
         <Logo />
-        {this.renderInspoContainer()}
+        <InspoContainer
+          onClick={() => this.generateRandomState()}
+          color={this.state.color}
+          picture={this.state.image}
+        />
       </div>
     );
   }
