@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
 import './FavoritesContainer.css';
-import {Image} from './apiCalls/apiCalls'
+import {Image} from '../../apiCalls/apiCalls'
+import SmallLogo from "../../Components/Logo/SmallLogo";
 
-type FavoritesContainerProps = {
+type FavoritesInspoContainer = {
   image: Image | null;
   color: string;
   word: string
+}
+interface FavoritesContainerProps {
+  favorites: FavoritesInspoContainer,
 }
 
 class FavoritesContainer extends Component {
@@ -17,7 +21,11 @@ class FavoritesContainer extends Component {
   }
   render() {
     return (
-      <p>{this.props.word}</p>
+      <div>
+        <SmallLogo />
+        <p>hello</p>
+        {/* <p>{this.props.word}</p> */}
+      </div>
     )
   }
 }

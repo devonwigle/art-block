@@ -48,9 +48,10 @@ class App extends Component<any, AppState> {
               picture={this.state.image}
             />
           </Route>
-          <Route exact path="/favorites">
+            <FavoritesContainer />
+          {/* <Route exact path="/favorites">
             <FavoritesContainer props={this.state}/>
-          </Route>
+          </Route> */}
         </Switch>
       </div>
     );

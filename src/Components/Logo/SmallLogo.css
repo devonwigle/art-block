@@ -1,0 +1,23 @@
+.top-line-small {
+  font-family: "Tangerine", cursive;
+  color: #000;
+  font-size: 72px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.top-line-2-small {
+  font-family: "Ubuntu", sans-serif;
+  color: #000;
+  font-weight: 400;
+  font-size: 72px;
+  margin: 0;
+}
+
+.bottom-line-small {
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: -15px;
+}
