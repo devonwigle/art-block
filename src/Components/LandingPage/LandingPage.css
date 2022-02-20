@@ -1,0 +1,14 @@
+.landing-button {
+  font-family: Tangerine;
+  font-size: 72px;
+  border: none;
+  cursor: pointer;
+  background-color: #f5ebe0;
+  text-decoration: underline 2px;
+}
+
+.landing-paragraphs {
+  font-family: Roboto;
+  font-size: 33px;
+  margin: 6% 18% 10% 18%;
+}
