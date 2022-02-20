@@ -12,6 +12,17 @@ const LandingPage = () => {
         <p>We will provide you a random color, image, and word(s) of inspiration.</p>
       </div>
       <button className="landing-button">Be Inspired</button>
+      <div className="main-div">
+        <div className="cube-div">
+          <div className="front"></div>
+          <div className="back"></div>
+          <div className="left"></div>
+          <div className="right"></div>
+          <div className="top"></div>
+          <div className="bottom"></div>
+          <div className="shadow"></div>
+        </div>
+      </div>  
     </div>
   )
 }
