@@ -4,7 +4,7 @@ import './LandingPage.css'
 
 const LandingPage = () => {
   return(
-    <div>
+    <div className="landing-page">
       <Logo />
       <div className="landing-paragraphs">
         <p>Are you feeling the unending agony that is being blocked from pursuing your artistic passions?</p>
