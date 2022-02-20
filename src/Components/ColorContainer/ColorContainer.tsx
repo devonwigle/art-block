@@ -1,6 +1,6 @@
 import React from 'react';
 import randomColor from "randomcolor";
-import './ColorContainer'
+import './ColorContainer.css'
 import CSS from 'csstype';
 
 let colorStyles: CSS.Properties = {
@@ -10,11 +10,12 @@ let colorStyles: CSS.Properties = {
 }
 
 function ColorContainer() {
+  
   return (
     <div>
       <div className="color-box" style={colorStyles}> 
       </div>
-      <p>{colorStyles.backgroundColor}</p>
+      <p className="hexcode">{colorStyles.backgroundColor}</p>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import wordData from './wordData'
-import './WordContainer'
+import './WordContainer.css'
 
 function getRandomIndex(wordData: string[]) {
   return Math.floor(Math.random() * wordData.length);

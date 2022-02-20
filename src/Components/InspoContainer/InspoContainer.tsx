@@ -7,6 +7,7 @@ import ColorContainer from '../ColorContainer/ColorContainer';
 
 type InspoContainerProps = {
   picture: Image;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 
@@ -19,7 +20,7 @@ const InspoContainer = (props: InspoContainerProps) => {
         <ColorContainer />
       </div>
       <div className="buttons">
-        <button>REINSPIRE</button>
+        <button onClick={(event) => props.onClick(event)}>REINSPIRE</button>
         <button>See My Inspirations</button>
       </div>
     </div>

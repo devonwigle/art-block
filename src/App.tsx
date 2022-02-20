@@ -18,15 +18,20 @@ class App extends Component<any, AppState> {
   }
 
   componentDidMount() {
+    this.generateRandomState()
+  }
+
+  generateRandomState() {
     let randNum = Math.floor(Math.random() * 1084);
     getImage(randNum).then((result) => this.setState({ image: result }));
   }
 
+
   renderInspoContainer() {
     if (this.state.image === null) {
-      return "Potato";
+      return '';
     } else {
-      return <InspoContainer picture={this.state.image} />;
+      return <InspoContainer onClick={() => this.generateRandomState()} picture={this.state.image} />;
     }
   }
 
