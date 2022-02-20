@@ -3,13 +3,13 @@ import PictureContainer from "../PictureContainer/PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
 import "./InspoContainer.css";
 import { Image } from "../../apiCalls/apiCalls";
-import ColorContainer from '../ColorContainer/ColorContainer';
+import ColorContainer from "../ColorContainer/ColorContainer";
 
 type InspoContainerProps = {
-  picture: Image;
+  picture: Image | null;
+  color: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
-
 
 const InspoContainer = (props: InspoContainerProps) => {
   return (
@@ -17,7 +17,7 @@ const InspoContainer = (props: InspoContainerProps) => {
       <div className="contents">
         <PictureContainer picture={props.picture} />
         <WordContainer />
-        <ColorContainer />
+        <ColorContainer color={props.color} />
       </div>
       <div className="buttons">
         <button onClick={(event) => props.onClick(event)}>REINSPIRE</button>
