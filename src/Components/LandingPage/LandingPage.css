@@ -23,7 +23,7 @@
   height: 400px;
   margin: 200px auto;
   perspective: 800px;
-  /* position: absolute; */
+  position: absolute;
 }
 
 .cube-div {
