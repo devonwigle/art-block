@@ -22,8 +22,12 @@ class FavoritesContainer extends Component {
   render() {
     return (
       <div>
-        <SmallLogo />
-        <p>hello</p>
+        <div className="fav-header">
+          <SmallLogo />
+          <button className="get-more-inspo">Get More Inspirations</button>
+        </div>
+        <h1 className="announce-title">Your Favorite Inspirations</h1>
+        
         {/* <p>{this.props.word}</p> */}
       </div>
     )

@@ -1,4 +1,26 @@
+.fav-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.get-more-inspo {
+  height: 38px;
+  margin-top: 26px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
 .small-logo-loca {
   display: flex;
   margin-left: 10px;
+}
+
+.getMoreInspo {
+  font-family: Ubuntu;
+  font-size: 36px;
+}
+
+.announce-title {
+  font-family: bebas-neue;
+  font-size: 54px;
 }
