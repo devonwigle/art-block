@@ -10,6 +10,12 @@
   cursor: pointer;
 }
 
+.package-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
 .small-logo-loca {
   display: flex;
   margin-left: 10px;

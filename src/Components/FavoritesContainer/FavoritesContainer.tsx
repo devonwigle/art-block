@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './FavoritesContainer.css';
 import {Image} from '../../apiCalls/apiCalls'
 import SmallLogo from "../../Components/Logo/SmallLogo";
+import InspoPackage from '../InspoPackage/InspoPackage';
 
 type FavoritesInspoContainer = {
   image: Image | null;
@@ -27,7 +28,18 @@ class FavoritesContainer extends Component {
           <button className="get-more-inspo">Get More Inspirations</button>
         </div>
         <h1 className="announce-title">Your Favorite Inspirations</h1>
-        
+        <div className="package-div">  
+          <InspoPackage />
+          <InspoPackage />
+          <InspoPackage />
+          <InspoPackage />
+          <InspoPackage />
+          <InspoPackage />
+          <InspoPackage />
+          <InspoPackage />
+          <InspoPackage />
+          <InspoPackage />
+        </div>
         {/* <p>{this.props.word}</p> */}
       </div>
     )
