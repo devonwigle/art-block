@@ -9,7 +9,6 @@ const getImage = async (id: number): Promise<Image> => {
       return response.json();
     })
     .then((result) => {
-      console.log(result);
       return result;
     })
     .catch((error) => console.log(error));
