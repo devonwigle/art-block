@@ -4,6 +4,7 @@ import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
 import getImage, { Image } from "./apiCalls/apiCalls";
 import randomColor from "randomcolor";
+import LandingPage from "./Components/LandingPage/LandingPage"
 
 type AppState = { idNum: number; image: Image | null; color: string };
 
@@ -32,12 +33,13 @@ class App extends Component<any, AppState> {
   render(): JSX.Element {
     return (
       <div className="App">
-        <Logo />
+        <LandingPage />
+        {/* <Logo />
         <InspoContainer
           onClick={() => this.generateRandomState()}
           color={this.state.color}
           picture={this.state.image}
-        />
+        /> */}
       </div>
     );
   }
