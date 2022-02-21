@@ -24,6 +24,7 @@
   margin-left: 40%;
   margin-top: 15%;
   perspective: 1000px;
+  perspective-origin: 50% 100px;
   position: absolute; 
 }
 
@@ -34,7 +35,7 @@
 .cube-div {
   width: 200px;   
   transform-style: preserve-3d; 
-  animation: rotate-diagonal-2 15s infinite linear;
+  animation: rotate-diagonal-2 30s infinite linear;
 }
 
 .cube-div div {
@@ -80,15 +81,38 @@
   background: #f1a2a2; 
 }
 
-@keyframes rotate-diagonal-2 {
+/* @keyframes rotate-diagonal-2 {
   0% {
     transform: rotate3d(-1, 1, 0, 0deg);
   }
-  50% {
+  25% {
     transform: rotate3d(-1, 1, 0, 180deg);
   }
-  100% {
+  50% {
     transform: rotate3d(-1, 1, 0, 360deg);
+  }
+  75% {
+    transform: rotate3d(1, 1, 0, 180deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 0, 0deg);
+  }
+} */
+@keyframes rotate-diagonal-2 {
+  0% {
+    transform: rotate3d(0, 1, 1, 0deg);
+  }
+  25% {
+    transform: rotate3d(0, 1, 1, 180deg); 
+  }
+  50% {
+    transform: rotate3d(0, 1, 1, 360deg);
+  }
+  75% {
+    transform: rotate3d(0, 1, 1, 180deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 1, 0deg);
   }
 }
 
