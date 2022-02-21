@@ -30,7 +30,6 @@ class FavoritesContainer extends Component<FavoritesContainerProps> {
             <InspoPackage image={image} color={color} word={word} />
           ))}
         </div>
-        {/* <p>{this.props.word}</p> */}
       </div>
     );
   }
