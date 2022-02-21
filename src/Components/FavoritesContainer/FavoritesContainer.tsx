@@ -1,49 +1,41 @@
-import React, {Component} from 'react';
-import './FavoritesContainer.css';
-import {Image} from '../../apiCalls/apiCalls'
+import React, { Component } from "react";
+import "./FavoritesContainer.css";
+import { PicsumImage } from "../../apiCalls/apiCalls";
 import SmallLogo from "../../Components/Logo/SmallLogo";
-import InspoPackage from '../InspoPackage/InspoPackage';
+import InspoPackage from "../InspoPackage/InspoPackage";
+import { Link } from "react-router-dom";
 
-type FavoritesInspoContainer = {
-  image: Image | null;
+export type FavoritesInspoContainer = {
+  image: PicsumImage;
   color: string;
-  word: string
-}
+  word: string;
+};
 interface FavoritesContainerProps {
-  favorites: FavoritesInspoContainer,
+  favorites: FavoritesInspoContainer[];
 }
 
-class FavoritesContainer extends Component {
+class FavoritesContainer extends Component<FavoritesContainerProps> {
   constructor(props: FavoritesContainerProps) {
-    super(props)
-    this.state = {
-      inspiration: []
-    }
+    super(props);
   }
   render() {
     return (
       <div>
         <div className="fav-header">
           <SmallLogo />
-          <button className="get-more-inspo">Get More Inspirations</button>
+          <Link to="/inspiration">
+            <button className="get-more-inspo">Get More Inspirations</button>
+          </Link>
         </div>
         <h1 className="announce-title">Your Favorite Inspirations</h1>
-        <div className="package-div">  
-          <InspoPackage />
-          <InspoPackage />
-          <InspoPackage />
-          <InspoPackage />
-          <InspoPackage />
-          <InspoPackage />
-          <InspoPackage />
-          <InspoPackage />
-          <InspoPackage />
-          <InspoPackage />
+        <div className="package-div">
+          {this.props.favorites.map(({ image, color, word }) => (
+            <InspoPackage image={image} color={color} word={word} />
+          ))}
         </div>
-        {/* <p>{this.props.word}</p> */}
       </div>
-    )
+    );
   }
 }
 
-export default FavoritesContainer
+export default FavoritesContainer;
