@@ -14,16 +14,16 @@
 .landing-paragraphs {
   font-family: Roboto;
   font-size: 33px;
-  margin: 6% 18% 10% 18%;
+  margin: 2% 18% 4% 18%;
   position: relative;
 }
 
 .main-div {
   width: 200px;
   height: 200px;
-  margin-left: 35%;
+  margin-left: 40%;
   margin-top: 15%;
-  perspective: 400px;
+  perspective: 1000px;
   position: absolute; 
 }
 
@@ -47,37 +47,37 @@
 
 .front {
   transform: translateZ(100px);
-  background: #4a4af8;
+  background: #acacf5;
 }
 
 
 .back {
   transform: rotateY(180deg) translateZ(100px);
-  background: #94fd94;
+  background: #d9b9f0;
 }
 
 .left {
   transform: rotateY(-90deg) translateX(-100px);
   transform-origin: left;
-  background: #f7f786; 
+  background: #f7f79f; 
 }
 
 .right {
   transform: rotateY(90deg) translateX(100px);
   transform-origin: right;
-  background: #f8b16a;   
+  background: #bcf7bc;   
 }
 
 .top {
   transform: rotateX(-90deg) translateY(-100px);
   transform-origin: top;
-  background: #c093e0;
+  background: #f8b16a;
 }
 
 .bottom {
   transform: rotateX(90deg) translateY(100px);
   transform-origin: bottom;
-  background: #f35e5e; 
+  background: #f1a2a2; 
 }
 
 @keyframes rotate-diagonal-2 {
