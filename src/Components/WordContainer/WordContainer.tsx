@@ -1,19 +1,15 @@
 import React from "react";
-import wordData from './wordData'
-import './WordContainer.css'
 
-function getRandomIndex(wordData: string[]) {
-  return Math.floor(Math.random() * wordData.length);
+import "./WordContainer.css";
+
+type WordContainerProps = {
+  word: string;
 };
 
-function getWord() {
-  return wordData[getRandomIndex(wordData)]
-}
-
-const WordContainer = () => {
+const WordContainer = ({ word }: WordContainerProps) => {
   return (
     <div className="word-box">
-      <p className="random-word">{getWord()}</p>
+      <p className="random-word">{word}</p>
     </div>
   );
 };

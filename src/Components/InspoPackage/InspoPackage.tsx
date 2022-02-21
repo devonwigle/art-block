@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
 import React from "react";
 import "./InspoPackage.css";
-import { Image } from "../../apiCalls/apiCalls";
+import { PicsumImage } from "../../apiCalls/apiCalls";
 
 type InspoPackageProps = {
-  image: Image;
+  image: PicsumImage;
   color: string;
   word: string;
 };

@@ -3,58 +3,43 @@ import { Route, Link, Switch, RouteComponentProps } from "react-router-dom";
 import "./App.css";
 import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
-import getImage, { Image } from "./apiCalls/apiCalls";
+import getImage, { PicsumImage } from "./apiCalls/apiCalls";
 import randomColor from "randomcolor";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import FavoritesContainer, {
   FavoritesInspoContainer,
 } from "./Components/FavoritesContainer/FavoritesContainer";
+import wordData from "./wordData";
+
+function getRandomIndex(wordData: string[]) {
+  return Math.floor(Math.random() * wordData.length);
+}
+
+function getWord() {
+  return wordData[getRandomIndex(wordData)];
+}
 
 type AppState = {
   idNum: number;
-  image: Image | null;
+  image: PicsumImage | string;
   color: string;
   word: string;
   favorites: FavoritesInspoContainer[];
 };
+
+function isPicsumImage(value: PicsumImage | string): value is PicsumImage {
+  return (value as PicsumImage).download_url !== undefined;
+}
 
 class App extends Component<any, AppState> {
   constructor(props: any) {
     super(props);
     this.state = {
       idNum: 0,
-      image: null,
+      image: "Loading...",
       color: "#FFF",
       word: "",
-      favorites: [
-        {
-          image: {
-            download_url:
-              "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-            id: "5",
-          },
-          color: "#FFF",
-          word: "poop",
-        },
-        {
-          image: {
-            download_url:
-              "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-            id: "5",
-          },
-          color: "#FFF",
-          word: "toop",
-        },
-        {
-          image: {
-            download_url:
-              "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
-            id: "5",
-          },
-          color: "#A80000",
-          word: "boop",
-        },
-      ],
+      favorites: [],
     };
   }
 
@@ -64,10 +49,32 @@ class App extends Component<any, AppState> {
 
   generateRandomState() {
     let randNum = Math.floor(Math.random() * 1084);
-    getImage(randNum).then((result) => this.setState({ image: result }));
+    getImage(randNum)
+      .then((result) => {
+        this.setState({ image: result });
+      })
+      .catch((error) => {
+        this.setState({ image: `Error loading image: ${error.toString()}` });
+      });
     this.setState({
       color: `${randomColor({ luminosity: "random", count: 1 })[0]}`,
+      word: getWord(),
     });
+  }
+
+  saveFavorite() {
+    if (isPicsumImage(this.state.image)) {
+      this.setState({
+        favorites: [
+          ...this.state.favorites,
+          {
+            image: this.state.image,
+            color: this.state.color,
+            word: this.state.word,
+          },
+        ],
+      });
+    }
   }
 
   render(): JSX.Element {
@@ -80,15 +87,16 @@ class App extends Component<any, AppState> {
           <Route exact path="/inspiration">
             <Logo />
             <InspoContainer
-              onClick={() => this.generateRandomState()}
+              onSave={() => this.saveFavorite()}
+              onReinspire={() => this.generateRandomState()}
               color={this.state.color}
               picture={this.state.image}
+              word={this.state.word}
             />
           </Route>
-          <FavoritesContainer favorites={this.state.favorites} />
-          {/* <Route exact path="/favorites">
-            <FavoritesContainer props={this.state}/>
-          </Route> */}
+          <Route exact path="/favorites">
+            <FavoritesContainer favorites={this.state.favorites} />
+          </Route>
         </Switch>
       </div>
     );

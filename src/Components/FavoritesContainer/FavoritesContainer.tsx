@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import "./FavoritesContainer.css";
-import { Image } from "../../apiCalls/apiCalls";
+import { PicsumImage } from "../../apiCalls/apiCalls";
 import SmallLogo from "../../Components/Logo/SmallLogo";
 import InspoPackage from "../InspoPackage/InspoPackage";
 
 export type FavoritesInspoContainer = {
-  image: Image;
+  image: PicsumImage;
   color: string;
   word: string;
 };
