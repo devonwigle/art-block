@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../Logo/Logo";
 import "./LandingPage.css";
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
@@ -30,7 +31,9 @@ const LandingPage = () => {
           We will provide you a random color, image, and word(s) of inspiration.
         </p>
       </div>
-      <button className="landing-button">Be Inspired</button>
+      <Link to="/inspiration">
+        <button className="landing-button">Be Inspired</button>
+      </Link>
     </div>
   );
 };
