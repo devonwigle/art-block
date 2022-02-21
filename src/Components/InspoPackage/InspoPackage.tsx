@@ -1,19 +1,26 @@
-import { render } from '@testing-library/react'
-import React from 'react'
-import './InspoPackage.css'
+import { render } from "@testing-library/react";
+import React from "react";
+import "./InspoPackage.css";
+import { Image } from "../../apiCalls/apiCalls";
 
-const InspoPackage = () => {
+type InspoPackageProps = {
+  image: Image;
+  color: string;
+  word: string;
+};
+
+const InspoPackage = ({ image, color, word }: InspoPackageProps) => {
   return (
     <div>
       <div>
-        <img className="small-img" src="https://picsum.photos/id/237/3500/2095"/>
-        <p> word here</p>
-        <div className="package-color">
-          <p>hexcode here</p>
+        <img className="small-img" src={image.download_url} />
+        <p>{word}</p>
+        <div className="package-color" style={{ background: color }}>
+          <p>{color}</p>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default InspoPackage
+export default InspoPackage;

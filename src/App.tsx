@@ -1,14 +1,22 @@
 import React, { Component } from "react";
-import { Route, Link, Switch, RouteComponentProps } from "react-router-dom"
+import { Route, Link, Switch, RouteComponentProps } from "react-router-dom";
 import "./App.css";
 import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
 import getImage, { Image } from "./apiCalls/apiCalls";
 import randomColor from "randomcolor";
-import LandingPage from "./Components/LandingPage/LandingPage"
-import FavoritesContainer from "./Components/FavoritesContainer/FavoritesContainer";
+import LandingPage from "./Components/LandingPage/LandingPage";
+import FavoritesContainer, {
+  FavoritesInspoContainer,
+} from "./Components/FavoritesContainer/FavoritesContainer";
 
-type AppState = { idNum: number; image: Image | null; color: string; word: string };
+type AppState = {
+  idNum: number;
+  image: Image | null;
+  color: string;
+  word: string;
+  favorites: FavoritesInspoContainer[];
+};
 
 class App extends Component<any, AppState> {
   constructor(props: any) {
@@ -17,7 +25,36 @@ class App extends Component<any, AppState> {
       idNum: 0,
       image: null,
       color: "#FFF",
-      word: '',
+      word: "",
+      favorites: [
+        {
+          image: {
+            download_url:
+              "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+            id: "5",
+          },
+          color: "#FFF",
+          word: "poop",
+        },
+        {
+          image: {
+            download_url:
+              "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+            id: "5",
+          },
+          color: "#FFF",
+          word: "toop",
+        },
+        {
+          image: {
+            download_url:
+              "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*",
+            id: "5",
+          },
+          color: "#A80000",
+          word: "boop",
+        },
+      ],
     };
   }
 
@@ -48,7 +85,7 @@ class App extends Component<any, AppState> {
               picture={this.state.image}
             />
           </Route>
-            <FavoritesContainer />
+          <FavoritesContainer favorites={this.state.favorites} />
           {/* <Route exact path="/favorites">
             <FavoritesContainer props={this.state}/>
           </Route> */}
