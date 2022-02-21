@@ -1,5 +1,3 @@
-import { createYield } from "typescript";
-
 describe("Load Inspiration page and render the necessary elements", () => {
   beforeEach(() => {
     cy.intercept("GET", "https://picsum.photos/id/*/info", {
