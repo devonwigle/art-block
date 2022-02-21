@@ -3,6 +3,7 @@ import "./FavoritesContainer.css";
 import { PicsumImage } from "../../apiCalls/apiCalls";
 import SmallLogo from "../../Components/Logo/SmallLogo";
 import InspoPackage from "../InspoPackage/InspoPackage";
+import { Link } from "react-router-dom";
 
 export type FavoritesInspoContainer = {
   image: PicsumImage;
@@ -22,7 +23,9 @@ class FavoritesContainer extends Component<FavoritesContainerProps> {
       <div>
         <div className="fav-header">
           <SmallLogo />
-          <button className="get-more-inspo">Get More Inspirations</button>
+          <Link to="/inspiration">
+            <button className="get-more-inspo">Get More Inspirations</button>
+          </Link>
         </div>
         <h1 className="announce-title">Your Favorite Inspirations</h1>
         <div className="package-div">
