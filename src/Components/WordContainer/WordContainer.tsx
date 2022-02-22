@@ -10,6 +10,8 @@ const WordContainer = ({ word }: WordContainerProps) => {
   return (
     <div className="word-box">
       <p className="random-word">{word}</p>
+      <input type="checkbox" name="word-checkbox"></input>
+      <label>This inspires me</label>
     </div>
   );
 };

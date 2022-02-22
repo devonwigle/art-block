@@ -15,6 +15,8 @@ function ColorContainer(props: ColorContainerProps) {
     <div>
       <div className="color-box" style={colorStyles}></div>
       <p className="hexcode">{colorStyles.backgroundColor}</p>
+      <input type="checkbox" name="picture-checkbox"></input>
+      <label>This inspires me</label>
     </div>
   );
 }

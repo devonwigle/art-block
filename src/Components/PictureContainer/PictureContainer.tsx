@@ -18,7 +18,13 @@ function renderPicture(picture: PicsumImage | string): JSX.Element {
 }
 
 const PictureContainer = (props: PictureContainerProps) => {
-  return <div className="image-box">{renderPicture(props.picture)}</div>;
+  return( 
+  <div>
+    <div className="image-box">{renderPicture(props.picture)}</div>
+    <input type="checkbox" name="picture-checkbox"></input>
+    <label>This inspires me</label>
+  </div> 
+  )
 };
 
 export default PictureContainer;
