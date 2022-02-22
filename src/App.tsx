@@ -25,6 +25,9 @@ type AppState = {
   color: string;
   word: string;
   favorites: FavoritesInspoContainer[];
+  wordIsLocked: boolean;
+  pictureIsLocked: boolean;
+  colorIsLocked: boolean;
 };
 
 function isPicsumImage(value: PicsumImage | string): value is PicsumImage {
@@ -40,6 +43,9 @@ class App extends Component<any, AppState> {
       color: "#FFF",
       word: "",
       favorites: [],
+      wordIsLocked: false,
+      pictureIsLocked: false,
+      colorIsLocked: false
     };
   }
 
