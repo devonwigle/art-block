@@ -3,6 +3,7 @@ import CSS from "csstype";
 
 type ColorContainerProps = {
   color: string;
+  onColorLockClick: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 function ColorContainer(props: ColorContainerProps) {
@@ -15,7 +16,7 @@ function ColorContainer(props: ColorContainerProps) {
     <div>
       <div className="color-box" style={colorStyles}></div>
       <p className="hexcode">{colorStyles.backgroundColor}</p>
-      <input type="checkbox" name="picture-checkbox"></input>
+      <input onChange={props.onColorLockClick} type="checkbox" name="picture-checkbox"></input>
       <label>This inspires me</label>
     </div>
   );

@@ -14,6 +14,7 @@ type InspoContainerProps = {
   onSave: React.MouseEventHandler<HTMLButtonElement>;
   onWordLockClick: React.ChangeEventHandler<HTMLInputElement>;
   onPictureLockClick: React.ChangeEventHandler<HTMLInputElement>;
+  onColorLockClick: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 const InspoContainer = (props: InspoContainerProps) => {
@@ -22,7 +23,7 @@ const InspoContainer = (props: InspoContainerProps) => {
       <div className="contents">
         <PictureContainer picture={props.picture} onPictureLockClick={props.onPictureLockClick} />
         <WordContainer word={props.word} onWordLockClick={props.onWordLockClick} />
-        <ColorContainer color={props.color} />
+        <ColorContainer color={props.color} onColorLockClick={props.onColorLockClick} />
       </div>
       <div className="buttons">
         <button onClick={(event) => props.onSave(event)}>
