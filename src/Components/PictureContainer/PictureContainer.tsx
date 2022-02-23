@@ -3,6 +3,7 @@ import "./PictureContainer.css";
 
 type PictureContainerProps = {
   picture: PicsumImage | string;
+  onPictureLockClick: React.ChangeEventHandler<HTMLInputElement>;
 };
 
 function isPicsumImage(value: PicsumImage | string): value is PicsumImage {
@@ -21,7 +22,7 @@ const PictureContainer = (props: PictureContainerProps) => {
   return( 
   <div>
     <div className="image-box">{renderPicture(props.picture)}</div>
-    <input type="checkbox" name="picture-checkbox"></input>
+    <input onChange={props.onPictureLockClick} type="checkbox" name="picture-checkbox"></input>
     <label>This inspires me</label>
   </div> 
   )

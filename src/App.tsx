@@ -90,8 +90,12 @@ class App extends Component<any, AppState> {
     }
   }
 
-  onWordLockClicked() {
+  onWordLockClick() {
     this.setState({wordIsLocked: !this.state.wordIsLocked})
+  }
+
+  onPictureLockClick() {
+    this.setState({pictureIsLocked: !this.state.pictureIsLocked})
   }
 
   render(): JSX.Element {
@@ -109,7 +113,8 @@ class App extends Component<any, AppState> {
               color={this.state.color}
               picture={this.state.image}
               word={this.state.word}
-              onWordLockClicked={() => this.onWordLockClicked()}
+              onWordLockClick={() => this.onWordLockClick()}
+              onPictureLockClick={() => this.onPictureLockClick()}
             />
           </Route>
           <Route exact path="/favorites">
