@@ -54,18 +54,25 @@ class App extends Component<any, AppState> {
   }
 
   generateRandomState() {
-    let randNum = Math.floor(Math.random() * 1084);
-    getImage(randNum)
-      .then((result) => {
-        this.setState({ image: result });
-      })
-      .catch((error) => {
-        this.setState({ image: `Error loading image: ${error.toString()}` });
-      });
-    this.setState({
-      color: `${randomColor({ luminosity: "random", count: 1 })[0]}`,
-      word: getWord(),
-    });
+
+    if (!this.state.colorIsLocked) {
+      this.setState({color: `${randomColor({ luminosity: "random", count: 1 })[0]}`})
+    }
+
+    if (!this.state.pictureIsLocked) {
+      let randNum = Math.floor(Math.random() * 1084);
+      getImage(randNum)
+        .then((result) => {
+          this.setState({ image: result });
+        })
+        .catch((error) => {
+          this.setState({ image: `Error loading image: ${error.toString()}` });
+        });
+    }
+
+    if (!this.state.wordIsLocked) {
+      this.setState({word: getWord()})
+    }
   }
 
   saveFavorite() {
