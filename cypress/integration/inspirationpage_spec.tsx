@@ -1,17 +1,6 @@
 describe("Load Inspiration page and render the necessary elements", () => {
   beforeEach(() => {
-    cy.intercept("GET", "https://picsum.photos/id/*/info", {
-      statusCode: 201,
-      body: {
-        id: "137",
-        author: "Vladimir Kramer",
-        width: 4752,
-        height: 3168,
-        url: "https://unsplash.com/photos/xzZtV9ED5Bs",
-        download_url: "https://picsum.photos/id/137/4752/3168",
-      },
-    })
-      .visit("http://localhost:3000")
+    cy.visit("http://localhost:3000")
       .get("button.landing-button")
       .click()
       .url()
@@ -29,6 +18,18 @@ describe("Load Inspiration page and render the necessary elements", () => {
   it("Should be able to visit the page and render the image div", () => {
     cy.get("div.image-box").should("be.visible");
   });
+  it("Should be able to visit the page and see first random image", () => {
+    cy.get("div.image-box").get("img").should("have.attr", "src");
+  });
+  it("Should be able to visit the page and click reinspire to change the image again", () => {
+    cy.get("button")
+      .first()
+      .next()
+      .click()
+      .get("div.image-box")
+      .get("img")
+      .should("have.attr", "src");
+  });
   it("Should be able to visit the page and render the word div", () => {
     cy.get("div.word-box").should("be.visible");
   });
@@ -40,6 +41,17 @@ describe("Load Inspiration page and render the necessary elements", () => {
   });
   it("Should be able to visit the page and render the hexcode", () => {
     cy.get("p.hexcode").should("be.visible");
+  });
+  it("Should be able to check 'This Inspires Me' checkboxes", () => {
+    cy.get("div.image-box").get("[type='checkbox']").check();
+  });
+  it.only("Should be able to uncheck 'This Inspires Me' checkboxes", () => {
+    cy.get("div.image-box")
+      .get("[type='checkbox']")
+      .check()
+      .get("div.image-box")
+      .get("[type='checkbox']")
+      .uncheck();
   });
   it("Should render 'Save Inspiration', 'Reinspire', and 'See all Favorites' button", () => {
     cy.get("button").siblings();
