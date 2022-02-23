@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export type FavoritesInspoContainer = {
   image: PicsumImage;
   color: string;
-  word: Word;
+  word: string;
 };
 interface FavoritesContainerProps {
   favorites: FavoritesInspoContainer[];
@@ -30,7 +30,12 @@ class FavoritesContainer extends Component<FavoritesContainerProps> {
         <h1 className="announce-title">Your Favorite Inspirations</h1>
         <div className="package-div">
           {this.props.favorites.map(({ image, color, word }) => (
-            <InspoPackage key={Date.now()} image={image} color={color} word={word} />
+            <InspoPackage
+              key={Date.now()}
+              image={image}
+              color={color}
+              word={word}
+            />
           ))}
         </div>
       </div>

@@ -3,8 +3,7 @@ import { Route, Link, Switch, RouteComponentProps } from "react-router-dom";
 import "./App.css";
 import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
-import { getImage, fetchWord } from "./apiCalls/apiCalls";
-import { PicsumImage, Word } from "./apiCalls/apiCalls";
+import { getImage, fetchWord, PicsumImage, Word } from "./apiCalls/apiCalls";
 import randomColor from "randomcolor";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import FavoritesContainer, {
@@ -24,7 +23,7 @@ type AppState = {
   idNum: number;
   image: PicsumImage | string;
   color: string;
-  word: Word | string;
+  word: string;
   favorites: FavoritesInspoContainer[];
   wordIsLocked: boolean;
   pictureIsLocked: boolean;
@@ -73,7 +72,10 @@ class App extends Component<any, AppState> {
     }
 
     if (!this.state.wordIsLocked) {
-      this.setState({ word: getWord() });
+      fetchWord().then((word) => {
+        this.setState({ word: word.word });
+        console.log(this.state);
+      });
     }
   }
 
