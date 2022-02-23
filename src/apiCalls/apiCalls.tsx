@@ -8,7 +8,7 @@ export interface Word {
   word: string;
 }
 
-const getImage = async (id: number): Promise<PicsumImage> => {
+export const getImage = async (id: number): Promise<PicsumImage> => {
   const newImage = fetch(`https://picsum.photos/id/${id}/info`)
     .then((response) => {
       if (!response.ok) {
@@ -25,20 +25,20 @@ const getImage = async (id: number): Promise<PicsumImage> => {
   return newImage;
 };
 
-const fetchWord = async (id: number): Promise<Word> => {
-  const newWord = fetch(`https://art-block-word-api.herokuapp.com/api/v1/words/id/${id}`)
+export const fetchWord = async (id: number): Promise<Word> => {
+  const newWord = fetch(
+    `https://art-block-word-api.herokuapp.com/api/v1/words/id/${id}`
+  )
     .then((response) => {
       if (!response.ok) {
         throw `${response.status}`;
       }
-    console.log(response);
-    return response.json();
+      console.log(response);
+      return response.json();
     })
     .then((result) => {
       console.log(result);
       return result;
     });
-  return newWord
-}
-
-export default {getImage, fetchWord};
+  return newWord;
+};

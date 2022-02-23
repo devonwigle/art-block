@@ -3,9 +3,8 @@ import { Route, Link, Switch, RouteComponentProps } from "react-router-dom";
 import "./App.css";
 import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
-import getImage from "./apiCalls/apiCalls";
+import { getImage, fetchWord } from "./apiCalls/apiCalls";
 import { PicsumImage, Word } from "./apiCalls/apiCalls";
-import fetchWord from "./apiCalls/apiCalls";
 import randomColor from "randomcolor";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import FavoritesContainer, {
@@ -47,7 +46,7 @@ class App extends Component<any, AppState> {
       favorites: [],
       wordIsLocked: false,
       pictureIsLocked: false,
-      colorIsLocked: false
+      colorIsLocked: false,
     };
   }
 
@@ -56,9 +55,10 @@ class App extends Component<any, AppState> {
   }
 
   generateRandomState() {
-
     if (!this.state.colorIsLocked) {
-      this.setState({color: `${randomColor({ luminosity: "random", count: 1 })[0]}`})
+      this.setState({
+        color: `${randomColor({ luminosity: "random", count: 1 })[0]}`,
+      });
     }
 
     if (!this.state.pictureIsLocked) {
@@ -73,7 +73,7 @@ class App extends Component<any, AppState> {
     }
 
     if (!this.state.wordIsLocked) {
-      this.setState({word: getWord()})
+      this.setState({ word: getWord() });
     }
   }
 
@@ -93,15 +93,15 @@ class App extends Component<any, AppState> {
   }
 
   onWordLockClick() {
-    this.setState({wordIsLocked: !this.state.wordIsLocked})
+    this.setState({ wordIsLocked: !this.state.wordIsLocked });
   }
 
   onPictureLockClick() {
-    this.setState({pictureIsLocked: !this.state.pictureIsLocked})
+    this.setState({ pictureIsLocked: !this.state.pictureIsLocked });
   }
 
   onColorLockClick() {
-    this.setState({colorIsLocked: !this.state.colorIsLocked})
+    this.setState({ colorIsLocked: !this.state.colorIsLocked });
   }
 
   render(): JSX.Element {
