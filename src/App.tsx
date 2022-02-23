@@ -24,14 +24,11 @@ type AppState = {
   wordIsLocked: boolean;
   pictureIsLocked: boolean;
   colorIsLocked: boolean;
+  wordAPIError: string;
 };
 
 function isPicsumImage(value: PicsumImage | string): value is PicsumImage {
   return (value as PicsumImage).download_url !== undefined;
-}
-
-function isWord(value: Word | string): value is Word {
-  return (value as Word).word !== undefined;
 }
 
 class App extends Component<any, AppState> {
@@ -46,6 +43,7 @@ class App extends Component<any, AppState> {
       wordIsLocked: false,
       pictureIsLocked: false,
       colorIsLocked: false,
+      wordAPIError: "",
     };
   }
 
@@ -72,15 +70,21 @@ class App extends Component<any, AppState> {
     }
 
     if (!this.state.wordIsLocked) {
-      fetchWord().then((word) => {
-        this.setState({ word: word.word });
-        console.log(this.state);
-      });
+      fetchWord()
+        .then((word) => {
+          this.setState({ word: word.word, wordAPIError: "" });
+          console.log(this.state);
+        })
+        .catch((error) =>
+          this.setState({
+            wordAPIError: `Error loading word: ${error.toString()}`,
+          })
+        );
     }
   }
 
   saveFavorite() {
-    if (isPicsumImage(this.state.image) && isWord(this.state.word)) {
+    if (isPicsumImage(this.state.image) && this.state.wordAPIError === "") {
       this.setState({
         favorites: [
           ...this.state.favorites,
