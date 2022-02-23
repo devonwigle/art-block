@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./FavoritesContainer.css";
-import { PicsumImage } from "../../apiCalls/apiCalls";
+import { PicsumImage, Word } from "../../apiCalls/apiCalls";
 import SmallLogo from "../../Components/Logo/SmallLogo";
 import InspoPackage from "../InspoPackage/InspoPackage";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export type FavoritesInspoContainer = {
   image: PicsumImage;
   color: string;
-  word: string;
+  word: Word;
 };
 interface FavoritesContainerProps {
   favorites: FavoritesInspoContainer[];

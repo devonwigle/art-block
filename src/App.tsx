@@ -3,7 +3,9 @@ import { Route, Link, Switch, RouteComponentProps } from "react-router-dom";
 import "./App.css";
 import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
-import getImage, { PicsumImage } from "./apiCalls/apiCalls";
+import getImage from "./apiCalls/apiCalls";
+import { PicsumImage, Word } from "./apiCalls/apiCalls";
+import fetchWord from "./apiCalls/apiCalls";
 import randomColor from "randomcolor";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import FavoritesContainer, {
@@ -23,7 +25,7 @@ type AppState = {
   idNum: number;
   image: PicsumImage | string;
   color: string;
-  word: string;
+  word: Word | string;
   favorites: FavoritesInspoContainer[];
   wordIsLocked: boolean;
   pictureIsLocked: boolean;
