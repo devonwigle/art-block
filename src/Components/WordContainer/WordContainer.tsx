@@ -1,8 +1,9 @@
 import React from "react";
+import {Word} from "../../apiCalls/apiCalls"
 import "./WordContainer.css";
 
 type WordContainerProps = {
-  word: string;
+  word: Word | string;
   onWordLockClick: React.ChangeEventHandler<HTMLInputElement>;
 };
 

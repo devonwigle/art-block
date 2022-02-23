@@ -38,5 +38,6 @@ export const fetchWord = async (): Promise<Word> => {
       console.log(result);
       return result.words;
     });
+
   return newWord;
 };

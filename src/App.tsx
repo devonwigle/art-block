@@ -15,10 +15,6 @@ function getRandomIndex(wordData: string[]) {
   return Math.floor(Math.random() * wordData.length);
 }
 
-function getWord() {
-  return wordData[getRandomIndex(wordData)];
-}
-
 type AppState = {
   idNum: number;
   image: PicsumImage | string;
@@ -32,6 +28,10 @@ type AppState = {
 
 function isPicsumImage(value: PicsumImage | string): value is PicsumImage {
   return (value as PicsumImage).download_url !== undefined;
+}
+
+function isWord(value: Word | string): value is Word {
+  return (value as Word).word !== undefined;
 }
 
 class App extends Component<any, AppState> {
@@ -63,10 +63,10 @@ class App extends Component<any, AppState> {
     if (!this.state.pictureIsLocked) {
       let randNum = Math.floor(Math.random() * 1084);
       getImage(randNum)
-        .then((result) => {
+        .then((result: any) => {
           this.setState({ image: result });
         })
-        .catch((error) => {
+        .catch((error: any) => {
           this.setState({ image: `Error loading image: ${error.toString()}` });
         });
     }
@@ -80,7 +80,7 @@ class App extends Component<any, AppState> {
   }
 
   saveFavorite() {
-    if (isPicsumImage(this.state.image)) {
+    if (isPicsumImage(this.state.image) && isWord(this.state.word)) {
       this.setState({
         favorites: [
           ...this.state.favorites,

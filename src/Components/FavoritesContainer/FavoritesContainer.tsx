@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./FavoritesContainer.css";
-import { PicsumImage, Word } from "../../apiCalls/apiCalls";
+import { PicsumImage } from "../../apiCalls/apiCalls";
 import SmallLogo from "../../Components/Logo/SmallLogo";
 import InspoPackage from "../InspoPackage/InspoPackage";
 import { Link } from "react-router-dom";
