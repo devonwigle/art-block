@@ -3,6 +3,11 @@ export interface PicsumImage {
   download_url: string;
 }
 
+export interface Word {
+  id: number;
+  word: string;
+}
+
 const getImage = async (id: number): Promise<PicsumImage> => {
   const newImage = fetch(`https://picsum.photos/id/${id}/info`)
     .then((response) => {
@@ -20,4 +25,20 @@ const getImage = async (id: number): Promise<PicsumImage> => {
   return newImage;
 };
 
-export default getImage;
+const getWord = async (id: number): Promise<Word> => {
+  const newWord = fetch(`https://art-block-word-api.herokuapp.com/api/v1/words/id/${id}`)
+    .then((response) => {
+      if (!response.ok) {
+        throw `${response.status}`;
+      }
+    console.log(response);
+    return response.json();
+    })
+    .then((result) => {
+      console.log(result);
+      return result;
+    });
+  return newWord
+}
+
+export default {getImage, getWord};
