@@ -16,10 +16,6 @@ function getRandomIndex(wordData: string[]) {
   return Math.floor(Math.random() * wordData.length);
 }
 
-function getWord() {
-  return wordData[getRandomIndex(wordData)];
-}
-
 type AppState = {
   idNum: number;
   image: PicsumImage | string;
@@ -77,7 +73,9 @@ class App extends Component<any, AppState> {
     }
 
     if (!this.state.wordIsLocked) {
-      this.setState({ word: getWord() });
+      fetchWord()
+        .then( result => this.setState({word: result.word})
+      )
     }
   }
 
