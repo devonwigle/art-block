@@ -3,9 +3,8 @@ import { Route, Link, Switch, RouteComponentProps } from "react-router-dom";
 import "./App.css";
 import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
-import getImage from "./apiCalls/apiCalls";
+import {getImage, fetchWord} from "./apiCalls/apiCalls";
 import { PicsumImage, Word } from "./apiCalls/apiCalls";
-import fetchWord from "./apiCalls/apiCalls";
 import randomColor from "randomcolor";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import FavoritesContainer, {
@@ -36,6 +35,10 @@ function isPicsumImage(value: PicsumImage | string): value is PicsumImage {
   return (value as PicsumImage).download_url !== undefined;
 }
 
+function isWord(value: Word | string): value is Word{
+  return (value as Word).word !== undefined;
+}
+
 class App extends Component<any, AppState> {
   constructor(props: any) {
     super(props);
@@ -64,10 +67,10 @@ class App extends Component<any, AppState> {
     if (!this.state.pictureIsLocked) {
       let randNum = Math.floor(Math.random() * 1084);
       getImage(randNum)
-        .then((result) => {
+        .then((result: any) => {
           this.setState({ image: result });
         })
-        .catch((error) => {
+        .catch((error: any) => {
           this.setState({ image: `Error loading image: ${error.toString()}` });
         });
     }
@@ -78,7 +81,7 @@ class App extends Component<any, AppState> {
   }
 
   saveFavorite() {
-    if (isPicsumImage(this.state.image)) {
+    if (isPicsumImage(this.state.image) && isWord(this.state.word)) {
       this.setState({
         favorites: [
           ...this.state.favorites,

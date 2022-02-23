@@ -8,7 +8,6 @@ const LandingPage = () => {
     <div className="landing-page">
       <Logo />
       <div className="landing-paragraphs">
-        
         <div className="main-div">
           <div className="cube-div">
             <div className="front"></div>

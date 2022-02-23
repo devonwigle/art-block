@@ -2,14 +2,14 @@ import React from "react";
 import PictureContainer from "../PictureContainer/PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
 import "./InspoContainer.css";
-import { PicsumImage } from "../../apiCalls/apiCalls";
+import { PicsumImage, Word } from "../../apiCalls/apiCalls";
 import ColorContainer from "../ColorContainer/ColorContainer";
 import { Link } from "react-router-dom";
 
 type InspoContainerProps = {
   picture: PicsumImage | string;
   color: string;
-  word: string;
+  word: Word | string;
   onReinspire: React.MouseEventHandler<HTMLButtonElement>;
   onSave: React.MouseEventHandler<HTMLButtonElement>;
   onWordLockClick: React.ChangeEventHandler<HTMLInputElement>;
