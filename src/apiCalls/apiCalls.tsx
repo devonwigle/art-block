@@ -31,13 +31,13 @@ export const fetchWord = async (id: number): Promise<Word> => {
       if (!response.ok) {
         throw `${response.status}`;
       }
-    console.log(response);
-    return response.json();
+      console.log(response);
+      return response.json();
     })
     .then((result) => {
       console.log(result);
       return result;
     });
+
   return newWord
 }
-
