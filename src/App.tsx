@@ -92,7 +92,8 @@ class App extends Component<any, AppState> {
   }
 
   deleteSavedInspo = (id: number) => {
-    debugger
+    const newFavs = this.state.favorites.filter( favorite => favorite.id != id)
+    this.setState({favorites: newFavs})
   }
 
   onWordLockClick() {
