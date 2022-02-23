@@ -84,10 +84,15 @@ class App extends Component<any, AppState> {
             image: this.state.image,
             color: this.state.color,
             word: this.state.word,
+            id: Date.now(),
           },
         ],
       });
     }
+  }
+
+  deleteSavedInspo = (id: number) => {
+    debugger
   }
 
   onWordLockClick() {
@@ -123,7 +128,7 @@ class App extends Component<any, AppState> {
             />
           </Route>
           <Route exact path="/favorites">
-            <FavoritesContainer favorites={this.state.favorites} />
+            <FavoritesContainer favorites={this.state.favorites} deleteSavedInspo={this.deleteSavedInspo} />
           </Route>
         </Switch>
       </div>
