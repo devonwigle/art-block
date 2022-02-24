@@ -31,3 +31,36 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+.Modal {
+  text-align: center;
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: auto;
+  background-color: rgb(243, 236, 230);
+  border: 1px solid black;
+  border-radius: 5px;
+}
+.Modal:focus {
+  outline: none;
+  border-color: #000000;
+}
+
+h1 {
+  font-family: "Tangerine", cursive;
+  color: #000;
+  font-size: 72px;
+  font-weight: 400;
+  margin: 0;
+  padding: 10px;
+}
+p {
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: -15px;
+  padding: 5px;
+}
