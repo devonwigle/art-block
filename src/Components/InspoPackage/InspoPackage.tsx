@@ -7,11 +7,14 @@ type InspoPackageProps = {
   image: PicsumImage;
   color: string;
   word: string;
+  deleteSavedInspo: any;
+  id: number;
 };
 
-const InspoPackage = ({ image, color, word }: InspoPackageProps) => {
+const InspoPackage = ({ image, color, word, id, deleteSavedInspo}: InspoPackageProps) => {
   return (
     <div>
+      <button onClick={() => deleteSavedInspo(id)}>x</button>
       <div>
         <img className="small-img" src={image.download_url} />
         <p>{word}</p>

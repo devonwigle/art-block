@@ -92,10 +92,17 @@ class App extends Component<any, AppState> {
             image: this.state.image,
             color: this.state.color,
             word: this.state.word,
+            id: Date.now(),
           },
         ],
       });
     }
+  }
+
+  deleteSavedInspo = (id: number) => {
+    const newFavs = this.state.favorites.filter( favorite => favorite.id !== id)
+    console.log(newFavs)
+    this.setState({favorites: newFavs})
   }
 
   onWordLockClick() {
@@ -131,7 +138,7 @@ class App extends Component<any, AppState> {
             />
           </Route>
           <Route exact path="/favorites">
-            <FavoritesContainer favorites={this.state.favorites} />
+            <FavoritesContainer favorites={this.state.favorites} deleteSavedInspo={this.deleteSavedInspo} />
           </Route>
         </Switch>
       </div>

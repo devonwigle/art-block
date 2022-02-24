@@ -9,9 +9,11 @@ export type FavoritesInspoContainer = {
   image: PicsumImage;
   color: string;
   word: string;
+  id: number;
 };
 interface FavoritesContainerProps {
   favorites: FavoritesInspoContainer[];
+  deleteSavedInspo: any;
 }
 
 class FavoritesContainer extends Component<FavoritesContainerProps> {
@@ -29,13 +31,8 @@ class FavoritesContainer extends Component<FavoritesContainerProps> {
         </div>
         <h1 className="announce-title">Your Favorite Inspirations</h1>
         <div className="package-div">
-          {this.props.favorites.map(({ image, color, word }) => (
-            <InspoPackage
-              key={Date.now()}
-              image={image}
-              color={color}
-              word={word}
-            />
+          {this.props.favorites.map(({ image, color, word, id }) => (
+            <InspoPackage deleteSavedInspo={this.props.deleteSavedInspo} key={id} image={image} color={color} word={word} id={id} />
           ))}
         </div>
       </div>
