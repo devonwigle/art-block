@@ -1,3 +1,7 @@
+.favorite {
+  height: 100%;
+}
+
 .fav-header {
   display: flex;
   justify-content: space-between;
@@ -24,7 +28,7 @@
   touch-action: manipulation;
 }
 
-.package-div {
+.inspo-group-div {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
