@@ -32,7 +32,7 @@ class FavoritesContainer extends Component<FavoritesContainerProps> {
         <h1 className="announce-title">Your Favorite Inspirations</h1>
         <div className="package-div">
           {this.props.favorites.map(({ image, color, word, id }) => (
-            <InspoPackage deleteSavedInspo={this.props.deleteSavedInspo} key={Date.now()} image={image} color={color} word={word} id={id} />
+            <InspoPackage deleteSavedInspo={this.props.deleteSavedInspo} key={id} image={image} color={color} word={word} id={id} />
           ))}
         </div>
       </div>

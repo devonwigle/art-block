@@ -92,7 +92,8 @@ class App extends Component<any, AppState> {
   }
 
   deleteSavedInspo = (id: number) => {
-    const newFavs = this.state.favorites.filter( favorite => favorite.id != id)
+    const newFavs = this.state.favorites.filter( favorite => favorite.id !== id)
+    console.log(newFavs)
     this.setState({favorites: newFavs})
   }
 
