@@ -1,0 +1,28 @@
+.grouping {
+  margin: 20px; 
+}
+
+.small-img {
+  height: 100px;
+  width: 150px;
+}
+
+.group-color {
+  height: 100px;
+  width: 150px;
+  background: #FFF;
+}
+
+.group-hexcode {
+  text-shadow: 
+    0 0 7px #FFF,
+    0 0 10px #FFF,
+    0 0 21px #FFF;
+}
+
+.group-hex-div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 22px;
+}
