@@ -19,7 +19,7 @@ type InspoContainerProps = {
 
 const InspoContainer = (props: InspoContainerProps) => {
   return (
-    <div className="Inspo-container">
+    <div className="inspo-container">
       <div className="contents">
         <PictureContainer
           picture={props.picture}
