@@ -17,7 +17,7 @@ const InspoGroup = ({ image, color, word, id, deleteSavedInspo}: InspoGroupProps
   return (
     <div className="grouping">
       <div>
-        <img className="small-img" src={image.download_url} />
+        <img className="small-img" src={image.download_url} alt=''/>
         <p>{word}</p>
         <div className="group-color" style={{ background: color }}>
           <div className="group-hex-div">

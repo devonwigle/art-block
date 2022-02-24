@@ -11,8 +11,9 @@ const WordContainer = (props: WordContainerProps) => {
   return (
     <div className="word-box">
       <p className="random-word">{props.word}</p>
-      <input onChange={props.onWordLockClick} type="checkbox" name="word-checkbox"></input>
-      <label>Lock this inspiration</label>
+      <label>
+        <input onChange={props.onWordLockClick} type="checkbox" name="word-checkbox"></input>
+      Lock this inspiration</label>
     </div>
   );
 };
