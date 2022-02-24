@@ -12,7 +12,7 @@ const WordContainer = (props: WordContainerProps) => {
     <div className="word-box">
       <p className="random-word">{props.word}</p>
       <input onChange={props.onWordLockClick} type="checkbox" name="word-checkbox"></input>
-      <label>This inspires me</label>
+      <label>Lock this inspiration</label>
     </div>
   );
 };

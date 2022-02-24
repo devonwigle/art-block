@@ -23,7 +23,7 @@ const PictureContainer = (props: PictureContainerProps) => {
   <div>
     <div className="image-box">{renderPicture(props.picture)}</div>
     <input onChange={props.onPictureLockClick} type="checkbox" name="picture-checkbox"></input>
-    <label>This inspires me</label>
+    <label>Lock this inspiration</label>
   </div> 
   )
 };

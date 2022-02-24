@@ -2,6 +2,8 @@ import { render } from "@testing-library/react";
 import React from "react";
 import "./InspoGroup.css";
 import { PicsumImage } from "../../apiCalls/apiCalls";
+//import xBrushStrokes from "../../xBrushStrokes.png"
+import thickBrush from "../../thickBrush.png"
 
 type InspoGroupProps = {
   image: PicsumImage;
@@ -23,7 +25,7 @@ const InspoGroup = ({ image, color, word, id, deleteSavedInspo}: InspoGroupProps
           </div>
         </div>
       </div>
-      <button onClick={() => deleteSavedInspo(id)}>Remove Inspiration</button>
+      <button className='delete-button' onClick={() => deleteSavedInspo(id)}><img className="button-image" src={thickBrush}/></button>
     </div>
   );
 };
