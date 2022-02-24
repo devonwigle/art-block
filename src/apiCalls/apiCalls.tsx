@@ -26,7 +26,7 @@ export const getImage = async (id: number): Promise<PicsumImage> => {
 };
 
 export const fetchWord = async (): Promise<Word> => {
-  const newWord = fetch("http://localhost:3001/api/v1/words/random")
+  const newWord = fetch("https://art-block-word-api.herokuapp.com/api/v1/words/random")
     .then((response) => {
       if (!response.ok) {
         throw `${response.status}`;
