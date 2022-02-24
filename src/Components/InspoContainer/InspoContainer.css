@@ -13,3 +13,21 @@
 button {
   margin: 5px;
 }
+
+.question-button {
+  padding: 0;
+  border: none;
+  background: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.mark-img {
+  height: 50px;
+  width: 80px;
+}
+
+button:hover {
+  cursor: pointer;
+}
