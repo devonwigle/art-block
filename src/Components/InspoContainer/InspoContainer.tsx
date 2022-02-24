@@ -2,7 +2,7 @@ import React from "react";
 import PictureContainer from "../PictureContainer/PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
 import "./InspoContainer.css";
-import { PicsumImage } from "../../apiCalls/apiCalls";
+import { PicsumImage, Word } from "../../apiCalls/apiCalls";
 import ColorContainer from "../ColorContainer/ColorContainer";
 import { Link } from "react-router-dom";
 
@@ -21,9 +21,18 @@ const InspoContainer = (props: InspoContainerProps) => {
   return (
     <div className="Inspo-container">
       <div className="contents">
-        <PictureContainer picture={props.picture} onPictureLockClick={props.onPictureLockClick} />
-        <WordContainer word={props.word} onWordLockClick={props.onWordLockClick} />
-        <ColorContainer color={props.color} onColorLockClick={props.onColorLockClick} />
+        <PictureContainer
+          picture={props.picture}
+          onPictureLockClick={props.onPictureLockClick}
+        />
+        <WordContainer
+          word={props.word}
+          onWordLockClick={props.onWordLockClick}
+        />
+        <ColorContainer
+          color={props.color}
+          onColorLockClick={props.onColorLockClick}
+        />
       </div>
       <div className="buttons">
         <button onClick={(event) => props.onSave(event)}>

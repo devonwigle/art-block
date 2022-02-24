@@ -3,7 +3,7 @@ import { Route, Link, Switch, RouteComponentProps } from "react-router-dom";
 import "./App.css";
 import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
-import getImage, { PicsumImage } from "./apiCalls/apiCalls";
+import { getImage, fetchWord, PicsumImage, Word } from "./apiCalls/apiCalls";
 import randomColor from "randomcolor";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import FavoritesContainer, {
@@ -15,10 +15,6 @@ function getRandomIndex(wordData: string[]) {
   return Math.floor(Math.random() * wordData.length);
 }
 
-function getWord() {
-  return wordData[getRandomIndex(wordData)];
-}
-
 type AppState = {
   idNum: number;
   image: PicsumImage | string;
@@ -28,6 +24,7 @@ type AppState = {
   wordIsLocked: boolean;
   pictureIsLocked: boolean;
   colorIsLocked: boolean;
+  wordAPIError: string;
 };
 
 function isPicsumImage(value: PicsumImage | string): value is PicsumImage {
@@ -45,7 +42,8 @@ class App extends Component<any, AppState> {
       favorites: [],
       wordIsLocked: false,
       pictureIsLocked: false,
-      colorIsLocked: false
+      colorIsLocked: false,
+      wordAPIError: "",
     };
   }
 
@@ -54,29 +52,39 @@ class App extends Component<any, AppState> {
   }
 
   generateRandomState() {
-
     if (!this.state.colorIsLocked) {
-      this.setState({color: `${randomColor({ luminosity: "random", count: 1 })[0]}`})
+      this.setState({
+        color: `${randomColor({ luminosity: "random", count: 1 })[0]}`,
+      });
     }
 
     if (!this.state.pictureIsLocked) {
       let randNum = Math.floor(Math.random() * 1084);
       getImage(randNum)
-        .then((result) => {
+        .then((result: any) => {
           this.setState({ image: result });
         })
-        .catch((error) => {
+        .catch((error: any) => {
           this.setState({ image: `Error loading image: ${error.toString()}` });
         });
     }
 
     if (!this.state.wordIsLocked) {
-      this.setState({word: getWord()})
+      fetchWord()
+        .then((word) => {
+          this.setState({ word: word.word, wordAPIError: "" });
+          console.log(this.state);
+        })
+        .catch((error) =>
+          this.setState({
+            wordAPIError: `Error loading word: ${error.toString()}`,
+          })
+        );
     }
   }
 
   saveFavorite() {
-    if (isPicsumImage(this.state.image)) {
+    if (isPicsumImage(this.state.image) && this.state.wordAPIError === "") {
       this.setState({
         favorites: [
           ...this.state.favorites,
@@ -98,15 +106,15 @@ class App extends Component<any, AppState> {
   }
 
   onWordLockClick() {
-    this.setState({wordIsLocked: !this.state.wordIsLocked})
+    this.setState({ wordIsLocked: !this.state.wordIsLocked });
   }
 
   onPictureLockClick() {
-    this.setState({pictureIsLocked: !this.state.pictureIsLocked})
+    this.setState({ pictureIsLocked: !this.state.pictureIsLocked });
   }
 
   onColorLockClick() {
-    this.setState({colorIsLocked: !this.state.colorIsLocked})
+    this.setState({ colorIsLocked: !this.state.colorIsLocked });
   }
 
   render(): JSX.Element {
