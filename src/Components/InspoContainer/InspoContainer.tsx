@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PictureContainer from "../PictureContainer/PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
 import "./InspoContainer.css";
@@ -6,7 +6,7 @@ import { PicsumImage, Word } from "../../apiCalls/apiCalls";
 import ColorContainer from "../ColorContainer/ColorContainer";
 import { Link } from "react-router-dom";
 import mark1 from "./mark1.png";
-import mark2 from "./mark2.png";
+import Modal from "react-modal";
 
 type InspoContainerProps = {
   picture: PicsumImage | string;
@@ -20,11 +20,15 @@ type InspoContainerProps = {
 };
 
 const InspoContainer = (props: InspoContainerProps) => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <div className="Inspo-container">
-      <button className="question-button" onClick={() => console.log("click")}>
+      <button className="question-button" onClick={() => setModalOpen(true)}>
         <img className="mark-img" src={mark1} />
       </button>
+      <Modal isOpen={modalOpen} onRequestClose={() => setModalOpen(false)}>
+        <p>Instructions</p>
+      </Modal>
       <div className="contents">
         <PictureContainer
           picture={props.picture}
