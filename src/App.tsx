@@ -120,27 +120,29 @@ class App extends Component<any, AppState> {
   render(): JSX.Element {
     return (
       <div className="App">
-        <Switch>
-          <Route exact path="/">
-            <LandingPage />
-          </Route>
-          <Route exact path="/inspiration">
-            <Logo />
-            <InspoContainer
-              onSave={() => this.saveFavorite()}
-              onReinspire={() => this.generateRandomState()}
-              color={this.state.color}
-              picture={this.state.image}
-              word={this.state.word}
-              onWordLockClick={() => this.onWordLockClick()}
-              onPictureLockClick={() => this.onPictureLockClick()}
-              onColorLockClick={() => this.onColorLockClick()}
-            />
-          </Route>
-          <Route exact path="/favorites">
-            <FavoritesContainer favorites={this.state.favorites} deleteSavedInspo={this.deleteSavedInspo} />
-          </Route>
-        </Switch>
+        <div className="flex-all">
+          <Switch>
+            <Route exact path="/">
+              <LandingPage />
+            </Route>
+            <Route exact path="/inspiration">
+              <Logo />
+              <InspoContainer
+                onSave={() => this.saveFavorite()}
+                onReinspire={() => this.generateRandomState()}
+                color={this.state.color}
+                picture={this.state.image}
+                word={this.state.word}
+                onWordLockClick={() => this.onWordLockClick()}
+                onPictureLockClick={() => this.onPictureLockClick()}
+                onColorLockClick={() => this.onColorLockClick()}
+              />
+            </Route>
+            <Route exact path="/favorites">
+              <FavoritesContainer favorites={this.state.favorites} deleteSavedInspo={this.deleteSavedInspo} />
+            </Route>
+          </Switch>
+        </div>  
       </div>
     );
   }
