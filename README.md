@@ -1,7 +1,7 @@
-# ![v1-40-tall-black](https://user-images.githubusercontent.com/69861203/153937916-5bb638c2-ed79-4c14-b4b5-9e5d7b38a08c.png) Rancid Tomatillos ![v1-40-tall-black](https://user-images.githubusercontent.com/69861203/153937916-5bb638c2-ed79-4c14-b4b5-9e5d7b38a08c.png)
+# ArtBlock
 
-- Click [HERE](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html) to view the project spec
-- Click [HERE](https://rancid-tomatillos-fw0sm9t03-rjur11.vercel.app/) to view the deployed site
+- Click [HERE](https://frontend.turing.edu/projects/module-3/stretch.html) to view the project spec
+- Click [HERE]() to view the deployed site
 
 ## Table of Contents
 
@@ -11,14 +11,14 @@
 - [Features](#features)
 - [See the Site in Action](#see-the-site-in-action)
 - [Future Goals](#future-goals)
+- [Stretch Goals](#stretch-goals)
 - [Created By](#created-by)
 - [Credit](#credit)
 
 ## Abstract
 
-_This project is definitely not Rotten Tomatoes._
-
-Have you been searching for a movie review website that can do it all? Look no further than Rancid Tomatillos! The homepage welcomes users to scroll through an extensive list of movies, populated thanks to a network request to a movie data API. At a glance, each movie on the homepage features that movie's poster, a tomatillo rating, and year of release. When a user clicks on a specific movie card, they are brought to a more indepth view of that movie's details. The modal that pops up provides a user with that movie's trailer (or still image if no trailer is available), the full runtime, release year, description, rating, and genre(s) of said movie. If a user knows a specific movie they want to search for, they can type their query into the search bar provided. If no movie can be found with that title, the user is kindly asked to search for another title. Thanks to React Router implementation, a user can easily navigate the site and obtain urls specific to the page they are on.
+Are you feeling the unending agony that is being blocked from pursuing your artistic passions? We have created the solution for you. ArtBlock provides a user with inspiration brought forth from the internet.
+We will provide you a random color, image, and word(s) of inspiration.
 
 ## Tech Used
 
@@ -28,8 +28,10 @@ Have you been searching for a movie review website that can do it all? Look no f
 - React Modal
 - [Lorem Picsum API](https://picsum.photos/)
 - Word API (built by us using Express, JavaScript, hosted on Heroku)
-  - [See the code!](https://github.com/devonwigle/word-api)
+  - [See the code](https://github.com/devonwigle/word-api)
   - [See the deployed API](https://art-block-word-api.herokuapp.com/api/v1/words)
+- Figma [Wireframe](https://www.figma.com/file/b7y9VkD9VE3DVPQUKZvp1K/Art-Block?node-id=25%3A106)
+- [GitHub Project Board](https://github.com/users/devonwigle/projects/3)
 
 ## Installation and Set-Up
 
@@ -45,11 +47,24 @@ Alternatively, you can access the deployed site HERE
 
 ## Features
 
+- LocalStorage for data persistence
+
 ## See the Site in Action!
 
 ## Future Goals
 
 - Ability to upload images of finished art
+
+## Stretch Goals
+
+This project allowed us to pick our own learning goals. As a group, we decided to teach ourselves TypeScript, while continuing to solidfy our understandings with React, React Router, and styling with JSX, and CSS.
+See below for ways we stretched ourselves even further on this project:
+
+- TypeScript ✅
+- React Modal ✅
+- Building out our own API using Express ✅
+- Hosting our API and App ✅
+-
 
 ## Created By:
 
