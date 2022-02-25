@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# ![v1-40-tall-black](https://user-images.githubusercontent.com/69861203/153937916-5bb638c2-ed79-4c14-b4b5-9e5d7b38a08c.png) Rancid Tomatillos ![v1-40-tall-black](https://user-images.githubusercontent.com/69861203/153937916-5bb638c2-ed79-4c14-b4b5-9e5d7b38a08c.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Click [HERE](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html) to view the project spec
+- Click [HERE](https://rancid-tomatillos-fw0sm9t03-rjur11.vercel.app/) to view the deployed site
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Abstract](#abstract)
+- [Tech Used](#tech-used)
+- [Installation and Set-Up](#installation-and-set-up)
+- [Features](#features)
+- [See the Site in Action](#see-the-site-in-action)
+- [Future Goals](#future-goals)
+- [Created By](#created-by)
+- [Credit](#credit)
 
-### `npm start`
+## Abstract
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+_This project is definitely not Rotten Tomatoes._
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Have you been searching for a movie review website that can do it all? Look no further than Rancid Tomatillos! The homepage welcomes users to scroll through an extensive list of movies, populated thanks to a network request to a movie data API. At a glance, each movie on the homepage features that movie's poster, a tomatillo rating, and year of release. When a user clicks on a specific movie card, they are brought to a more indepth view of that movie's details. The modal that pops up provides a user with that movie's trailer (or still image if no trailer is available), the full runtime, release year, description, rating, and genre(s) of said movie. If a user knows a specific movie they want to search for, they can type their query into the search bar provided. If no movie can be found with that title, the user is kindly asked to search for another title. Thanks to React Router implementation, a user can easily navigate the site and obtain urls specific to the page they are on.
 
-### `npm test`
+## Tech Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- TypeScript
+- React
+- React Router
+- React Modal
+- [Lorem Picsum API](https://picsum.photos/)
+- Word API (built by us using Express, JavaScript, hosted on Heroku)
+  - [See the code!](https://github.com/devonwigle/word-api)
+  - [See the deployed API](https://art-block-word-api.herokuapp.com/api/v1/words)
 
-### `npm run build`
+## Installation and Set-Up
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To install this project, please see below:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+1. Clone down this Repository using `git clone`
+2. Next, `cd` into the cloned repository and `npm install` to install library dependancies
+3. Finally, run `npm start` and open up localhost at the port indicated to view the webpage
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Alternatively, you can access the deployed site HERE
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## See the Site in Action!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Goals
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Ability to upload images of finished art
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Created By:
 
-## Learn More
+- [Emma Chory](https://github.com/Echory)
+- [Devin Wigle](https://github.com/devonwigle)
+- [Rana Jurjus](https://github.com/rjur11)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Credit
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Loading animation inspired by:
