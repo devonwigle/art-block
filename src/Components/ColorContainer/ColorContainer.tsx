@@ -14,10 +14,12 @@ function ColorContainer(props: ColorContainerProps) {
   };
   return (
     <div>
-      <div className="color-box" style={colorStyles}></div>
-      <p className="hexcode">{colorStyles.backgroundColor}</p>
-      <input onChange={props.onColorLockClick} type="checkbox" name="picture-checkbox"></input>
-      <label>This inspires me</label>
+      <div className="color-box" style={colorStyles}>
+        <p className="hexcode">{colorStyles.backgroundColor}</p>
+      </div>
+      <label>
+        <input onChange={props.onColorLockClick} type="checkbox" name="color-checkbox"></input>
+      Lock this inspiration</label>
     </div>
   );
 }

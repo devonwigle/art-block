@@ -22,7 +22,7 @@ type InspoContainerProps = {
 const InspoContainer = (props: InspoContainerProps) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div className="Inspo-container">
+    <div className="inspo-container">
       <button className="question-button" onClick={() => setModalOpen(true)}>
         <img className="mark-img" src={mark1} alt="question mark" />
       </button>

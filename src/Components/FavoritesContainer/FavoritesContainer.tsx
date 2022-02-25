@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./FavoritesContainer.css";
 import { PicsumImage } from "../../apiCalls/apiCalls";
 import SmallLogo from "../../Components/Logo/SmallLogo";
-import InspoPackage from "../InspoPackage/InspoPackage";
+import InspoGroup from "../InspoGroup/InspoGroup";
 import { Link } from "react-router-dom";
 
 export type FavoritesInspoContainer = {
@@ -22,7 +22,7 @@ class FavoritesContainer extends Component<FavoritesContainerProps> {
   }
   render() {
     return (
-      <div>
+      <div className="favorite">
         <div className="fav-header">
           <SmallLogo />
           <Link to="/inspiration">
@@ -30,9 +30,9 @@ class FavoritesContainer extends Component<FavoritesContainerProps> {
           </Link>
         </div>
         <h1 className="announce-title">Your Favorite Inspirations</h1>
-        <div className="package-div">
+        <div className="inspo-group-div">
           {this.props.favorites.map(({ image, color, word, id }) => (
-            <InspoPackage deleteSavedInspo={this.props.deleteSavedInspo} key={id} image={image} color={color} word={word} id={id} />
+            <InspoGroup deleteSavedInspo={this.props.deleteSavedInspo} key={id} image={image} color={color} word={word} id={id} />
           ))}
         </div>
       </div>

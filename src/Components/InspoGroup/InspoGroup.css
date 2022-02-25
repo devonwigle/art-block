@@ -1,0 +1,42 @@
+.grouping {
+  margin: 20px; 
+}
+
+.small-img {
+  height: 100px;
+  width: 150px;
+}
+
+.group-color {
+  height: 100px;
+  width: 150px;
+  background: #FFF;
+}
+
+.group-hexcode {
+  text-shadow: 
+    0 0 4px #FFF,
+    0 0 9px #FFF,
+    0 0 19px #FFF,
+    0 0 25px #FFF;
+}
+
+.group-hex-div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding-top: 22px;
+}
+
+.delete-button {
+  font-family: 'Dancing Script', cursive;
+  border: none;
+  cursor: pointer;
+  background: #f5ebe0;
+}
+
+.button-image {
+  width: 20px;
+  height: auto;
+  background: #f5ebe0;
+}

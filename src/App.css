@@ -4,3 +4,10 @@
   text-align: center;
   background-color: #f5ebe0;
 }
+
+.flex-all {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100%
+}
