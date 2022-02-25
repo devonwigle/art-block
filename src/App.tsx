@@ -100,10 +100,12 @@ class App extends Component<any, AppState> {
   }
 
   deleteSavedInspo = (id: number) => {
-    const newFavs = this.state.favorites.filter( favorite => favorite.id !== id)
-    console.log(newFavs)
-    this.setState({favorites: newFavs})
-  }
+    const newFavs = this.state.favorites.filter(
+      (favorite) => favorite.id !== id
+    );
+    console.log(newFavs);
+    this.setState({ favorites: newFavs });
+  };
 
   onWordLockClick() {
     this.setState({ wordIsLocked: !this.state.wordIsLocked });
@@ -138,7 +140,10 @@ class App extends Component<any, AppState> {
             />
           </Route>
           <Route exact path="/favorites">
-            <FavoritesContainer favorites={this.state.favorites} deleteSavedInspo={this.deleteSavedInspo} />
+            <FavoritesContainer
+              favorites={this.state.favorites}
+              deleteSavedInspo={this.deleteSavedInspo}
+            />
           </Route>
         </Switch>
       </div>
