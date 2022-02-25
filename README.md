@@ -18,7 +18,7 @@
 ## Abstract
 
 Are you feeling the unending agony that is being blocked from pursuing your artistic passions? We have created the solution for you. ArtBlock provides a user with inspiration brought forth from the internet.
-We will provide you a random color, image, and word(s) of inspiration.
+We will provide you a random color, image, and word of inspiration in the hopes of getting you out of your creative block.
 
 ## Tech Used
 
@@ -48,8 +48,20 @@ Alternatively, you can access the deployed site HERE
 ## Features
 
 - LocalStorage for data persistence
+- 100% Lighthouse Accessibility Rating
 
 ## See the Site in Action!
+
+The user is welcomed to an aesthetically pleasing landing page, where they're given a short description about how we hope our application will help get them "unblocked" in their creativity. To proceed into the main portion of the application, we invite the user to click the "Be Inspired" button.
+
+![Landing Page](https://media.giphy.com/media/ldj9skC7bfwDQwVoL1/giphy.gif)
+
+The next page a user navigates to is our "Inspiration Creation" page. A pre-made trio of inspiration (one photo, one word, one color with hexcode) will be waiting for a user upon landing on this page. We have provided a few instructions
+on how to use this tool- just click the "?" in the upper right hand corner to get the full instructions.
+
+Here is a quick demo of the saving, rinspiring, and locking abilities of this page:
+
+![Creating your Inspirations](https://media.giphy.com/media/Cn5GFw5I3ZNYoawR45/giphy.gif)
 
 ## Future Goals
 
