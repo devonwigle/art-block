@@ -27,6 +27,8 @@ type AppState = {
   wordAPIError: string;
 };
 
+//App props as empty object and pass in in place of any in generic and constructor
+
 function isPicsumImage(value: PicsumImage | string): value is PicsumImage {
   return (value as PicsumImage).download_url !== undefined;
 }
@@ -150,10 +152,13 @@ class App extends Component<any, AppState> {
               />
             </Route>
             <Route exact path="/favorites">
-              <FavoritesContainer favorites={this.state.favorites} deleteSavedInspo={this.deleteSavedInspo} />
+              <FavoritesContainer
+                favorites={this.state.favorites}
+                deleteSavedInspo={this.deleteSavedInspo}
+              />
             </Route>
           </Switch>
-        </div>  
+        </div>
       </div>
     );
   }

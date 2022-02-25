@@ -9,7 +9,7 @@ type InspoGroupProps = {
   image: PicsumImage;
   color: string;
   word: string;
-  deleteSavedInspo: any;
+  deleteSavedInspo: (id: number) => void;
   id: number;
 };
 
