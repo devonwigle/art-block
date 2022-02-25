@@ -1,0 +1,9 @@
+.message-box {
+  height: 300px;
+  width: 400px;
+}
+
+.message-text {
+  font-family: bebas neue;
+  font-size: 36px;
+}

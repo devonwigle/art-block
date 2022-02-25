@@ -9,8 +9,8 @@ type ColorContainerProps = {
 function ColorContainer(props: ColorContainerProps) {
   const colorStyles: CSS.Properties = {
     backgroundColor: props.color,
-    height: "400px",
-    width: "600px",
+    height: "300px",
+    width: "450px",
   };
   return (
     <div>
