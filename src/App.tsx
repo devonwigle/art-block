@@ -106,6 +106,11 @@ class App extends Component<any, AppState> {
         ],
       });
     }
+    this.clearInputs()
+  }
+
+  clearInputs = () => {
+    this.setState({ wordIsLocked: false, pictureIsLocked: false, colorIsLocked: false });
   }
 
   deleteSavedInspo = (id: number) => {
