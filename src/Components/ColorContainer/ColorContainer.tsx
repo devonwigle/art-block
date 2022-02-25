@@ -9,8 +9,8 @@ type ColorContainerProps = {
 function ColorContainer(props: ColorContainerProps) {
   const colorStyles: CSS.Properties = {
     backgroundColor: props.color,
-    height: "200px",
-    width: "300px",
+    height: "400px",
+    width: "600px",
   };
   return (
     <div>
@@ -18,8 +18,13 @@ function ColorContainer(props: ColorContainerProps) {
         <p className="hexcode">{colorStyles.backgroundColor}</p>
       </div>
       <label>
-        <input onChange={props.onColorLockClick} type="checkbox" name="color-checkbox"></input>
-      Lock this inspiration</label>
+        <input
+          onChange={props.onColorLockClick}
+          type="checkbox"
+          name="color-checkbox"
+        ></input>
+        Lock this inspiration
+      </label>
     </div>
   );
 }
