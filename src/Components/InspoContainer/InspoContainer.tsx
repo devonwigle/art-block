@@ -77,12 +77,20 @@ const InspoContainer = (props: InspoContainerProps) => {
         />
       </div>
       <div className="buttons">
-        <button onClick={(event) => props.onSave(event)}>
+        <button
+          className="inspo-buttons"
+          onClick={(event) => props.onSave(event)}
+        >
           Save Inspiration
         </button>
-        <button onClick={(event) => props.onReinspire(event)}>Reinspire</button>
+        <button
+          className="inspo-buttons"
+          onClick={(event) => props.onReinspire(event)}
+        >
+          Reinspire
+        </button>
         <Link to="/favorites">
-          <button>See My Inspirations</button>
+          <button className="inspo-buttons">See My Inspirations</button>
         </Link>
       </div>
     </div>

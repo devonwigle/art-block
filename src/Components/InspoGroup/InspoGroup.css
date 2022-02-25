@@ -1,35 +1,32 @@
 .grouping {
-  margin: 20px; 
+  margin: 20px;
 }
 
 .small-img {
-  height: 100px;
-  width: 150px;
+  height: 200px;
+  width: 300px;
 }
 
 .group-color {
-  height: 100px;
-  width: 150px;
-  background: #FFF;
+  height: 200px;
+  width: 300px;
+  background: #fff;
 }
 
 .group-hexcode {
-  text-shadow: 
-    0 0 4px #FFF,
-    0 0 9px #FFF,
-    0 0 19px #FFF,
-    0 0 25px #FFF;
+  text-shadow: 0 0 4px #fff, 0 0 9px #fff, 0 0 19px #fff, 0 0 25px #fff;
+  font-size: 25px;
 }
 
 .group-hex-div {
   display: flex;
   justify-content: center;
   align-content: center;
-  padding-top: 22px;
+  padding-top: 60px;
 }
 
 .delete-button {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   border: none;
   cursor: pointer;
   background: #f5ebe0;
@@ -39,4 +36,10 @@
   width: 20px;
   height: auto;
   background: #f5ebe0;
+}
+.group-word {
+  font-size: 36px;
+}
+.grouping {
+  border: 2px solid black;
 }

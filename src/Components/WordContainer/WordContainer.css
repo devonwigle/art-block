@@ -1,4 +1,16 @@
 .random-word {
   font-family: Bebas Neue;
-  font-size: 48px;
+  font-size: 72px;
+}
+
+.checkbox-div {
+  display: flex;
+  justify-content: center;
+}
+
+.word-box {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-between;
 }

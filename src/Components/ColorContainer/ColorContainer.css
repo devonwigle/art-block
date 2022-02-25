@@ -1,17 +1,11 @@
 .color-box {
   display: flex;
-  height: 200px;
-  width: 300px;
   justify-content: center;
   align-items: center;
 }
 
 .hexcode {
   font-family: bebas neue;
-  font-size: 20px;
-  text-shadow: 
-    0 0 4px #FFF,
-    0 0 9px #FFF,
-    0 0 19px #FFF,
-    0 0 25px #FFF;
+  font-size: 36px;
+  text-shadow: 0 0 4px #fff, 0 0 9px #fff, 0 0 19px #fff, 0 0 25px #fff;
 }
