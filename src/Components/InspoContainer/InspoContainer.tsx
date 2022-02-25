@@ -24,7 +24,7 @@ const InspoContainer = (props: InspoContainerProps) => {
   return (
     <div className="Inspo-container">
       <button className="question-button" onClick={() => setModalOpen(true)}>
-        <img className="mark-img" src={mark1} />
+        <img className="mark-img" src={mark1} alt="question mark" />
       </button>
       <Modal
         className="Modal"
@@ -34,7 +34,7 @@ const InspoContainer = (props: InspoContainerProps) => {
         <h1>Instructions</h1>
         <p className="modal-text">
           Welcome to ArtBlock! On this page, you can find inspiration in three
-          forms, an image, a descriptive word, or a color (hexcode provided).
+          forms: an image, a descriptive word, or a color (hexcode provided).
         </p>
         <p className="modal-text">
           We'll create the first trio of inspiration for you. If you don't like
@@ -49,7 +49,9 @@ const InspoContainer = (props: InspoContainerProps) => {
         </p>
         <p className="modal-text">
           If you're happy with your trio of inspiration, go ahead and click the
-          Save Inspiration button! You can save as many trios as you'd like.
+          Save Inspiration button! You can save as many trios as you'd like. You
+          will unfortunately not be able to save if our app is unable to pull an
+          image.
         </p>
         <p className="modal-text">
           Finally, to see all your saved Inspirations, click the See my
