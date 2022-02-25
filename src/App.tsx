@@ -49,6 +49,15 @@ class App extends Component<any, AppState> {
 
   componentDidMount() {
     this.generateRandomState();
+    const maybeFavorites = localStorage.getItem("favorites");
+    if (maybeFavorites === null) {
+      return;
+    }
+    this.setState({ favorites: JSON.parse(maybeFavorites) });
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem("favorites", JSON.stringify(this.state.favorites));
   }
 
   generateRandomState() {
