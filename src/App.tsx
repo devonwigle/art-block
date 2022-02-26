@@ -21,6 +21,7 @@ type AppState = {
   color: string;
   word: string;
   favorites: FavoritesInspoContainer[];
+  error: boolean;
   wordIsLocked: boolean;
   pictureIsLocked: boolean;
   colorIsLocked: boolean;
@@ -40,6 +41,7 @@ class App extends Component<any, AppState> {
       color: "#FFF",
       word: "",
       favorites: [],
+      error: false,
       wordIsLocked: false,
       pictureIsLocked: false,
       colorIsLocked: false,
@@ -68,26 +70,26 @@ class App extends Component<any, AppState> {
     }
 
     if (!this.state.pictureIsLocked) {
+      this.setState({error: false})
       let randNum = Math.floor(Math.random() * 1084);
       getImage(randNum)
         .then((result: any) => {
           this.setState({ image: result });
         })
         .catch((error: any) => {
-          this.setState({ image: `Error loading image: ${error.toString()}` });
+          this.setState({error: true})
         });
     }
 
     if (!this.state.wordIsLocked) {
+      this.setState({ error: false })
       fetchWord()
         .then((word) => {
           this.setState({ word: word.word, wordAPIError: "" });
           console.log(this.state);
         })
-        .catch((error) =>
-          this.setState({
-            wordAPIError: `Error loading word: ${error.toString()}`,
-          })
+        .catch((error: any) =>
+          this.setState({ error: true })
         );
     }
   }
@@ -149,6 +151,7 @@ class App extends Component<any, AppState> {
                 color={this.state.color}
                 picture={this.state.image}
                 word={this.state.word}
+                error={this.state.error}
                 onWordLockClick={() => this.onWordLockClick()}
                 onPictureLockClick={() => this.onPictureLockClick()}
                 onColorLockClick={() => this.onColorLockClick()}

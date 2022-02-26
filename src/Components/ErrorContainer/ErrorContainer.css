@@ -1,0 +1,13 @@
+.message-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 300px;
+  width: 450px;
+}
+
+.message-text {
+  font-family: bebas neue;
+  font-size: 32px;
+  margin: 0;
+}
