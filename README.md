@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# ArtBlock
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Click [HERE](https://frontend.turing.edu/projects/module-3/stretch.html) to view the project spec
+- Click [HERE]() to view the deployed site
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Abstract](#abstract)
+- [Tech Used](#tech-used)
+- [Installation and Set-Up](#installation-and-set-up)
+- [Features](#features)
+- [See the Site in Action](#see-the-site-in-action)
+- [Future Goals](#future-goals)
+- [Stretch Goals](#stretch-goals)
+- [Created By](#created-by)
+- [Credit](#credit)
 
-### `npm start`
+## Abstract
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Are you feeling the unending agony that is being blocked from pursuing your artistic passions? We have created the solution for you. ArtBlock provides a user with inspiration brought forth from the internet.
+We will provide you a random color, image, and word of inspiration in the hopes of getting you out of your creative block.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Tech Used
 
-### `npm test`
+- TypeScript
+- React
+- React Router
+- React Modal
+- [Lorem Picsum API](https://picsum.photos/)
+- Word API (built by us using Express, JavaScript, hosted on Heroku)
+  - [See the code](https://github.com/devonwigle/word-api)
+  - [See the deployed API](https://art-block-word-api.herokuapp.com/api/v1/words)
+- Figma [Wireframe](https://www.figma.com/file/b7y9VkD9VE3DVPQUKZvp1K/Art-Block?node-id=25%3A106)
+- [GitHub Project Board](https://github.com/users/devonwigle/projects/3)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation and Set-Up
 
-### `npm run build`
+To install this project, please see below:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+1. Clone down this Repository using `git clone`
+2. Next, `cd` into the cloned repository and `npm install` to install library dependancies
+3. Finally, run `npm start` and open up localhost at the port indicated to view the webpage
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Alternatively, you can access the deployed site HERE
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `npm run eject`
+- LocalStorage for data persistence
+- 100% Lighthouse Accessibility Rating
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## See the Site in Action!
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The user is welcomed to an aesthetically pleasing landing page, where they're given a short description about how we hope our application will help get them "unblocked" in their creativity. To proceed into the main portion of the application, we invite the user to click the "Be Inspired" button.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Landing Page](https://media.giphy.com/media/ldj9skC7bfwDQwVoL1/giphy.gif)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+The next page a user navigates to is our "Inspiration Creation" page. A pre-made trio of inspiration (one photo, one word, one color with hexcode) will be waiting for a user upon landing on this page. We have provided a few instructions
+on how to use this tool- just click the "?" in the upper right hand corner to get the full instructions.
 
-## Learn More
+Here is a quick demo of the saving, reinspiring, and locking abilities of this page:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Creating your Inspirations](https://media.giphy.com/media/Cn5GFw5I3ZNYoawR45/giphy.gif)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Future Goals
+
+- Ability to upload images of finished art
+
+## Stretch Goals
+
+This project allowed us to pick our own learning goals. As a group, we decided to teach ourselves TypeScript, while continuing to solidfy our understandings with React, React Router, and styling with JSX, and CSS.
+See below for ways we stretched ourselves even further on this project:
+
+- TypeScript ✅
+- React Modal ✅
+- Building out our own API using Express ✅
+- Hosting our API and App ✅
+
+## Created By:
+
+- [Emma Chory](https://github.com/Echory)
+- [Devon Wigle](https://github.com/devonwigle)
+- [Rana Jurjus](https://github.com/rjur11)
+
+## Credit
+
+- Loading animation inspired by:
