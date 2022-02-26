@@ -22,11 +22,9 @@ class CanvasContainer extends Component<any, CanvasState> {
       strokeColor: "black"
     }
   }
-  
 
-
-  handleColorChange = (evt: any) => {
-    this.setState({strokeColor: evt.hex})
+  handleColorChange = (event: any) => {
+    this.setState({strokeColor: event.hex})
   }
 
 
@@ -38,13 +36,11 @@ class CanvasContainer extends Component<any, CanvasState> {
         style={styles}
         width="500"
         height="500"
-        strokeWidth={4}
         strokeColor={this.state.strokeColor}
       />
     </div>
     )
   }
-
 };
 
 export default CanvasContainer
