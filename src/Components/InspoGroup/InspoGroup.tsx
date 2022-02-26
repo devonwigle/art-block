@@ -11,6 +11,7 @@ type InspoGroupProps = {
   color: string;
   word: string;
   deleteSavedInspo: any;
+  goToDraw: any;
   id: number;
 };
 
@@ -20,6 +21,7 @@ const InspoGroup = ({
   word,
   id,
   deleteSavedInspo,
+  goToDraw,
 }: InspoGroupProps) => {
   return (
     <div className="grouping">
@@ -36,7 +38,7 @@ const InspoGroup = ({
         <img className="button-image" src={thickBrush} />
       </button>
       <Link to="/canvas">
-        <button className="draw-button" >
+        <button className="draw-button" onClick={() => goToDraw(id)}>
           <img className="button-image" src={pencil} />
         </button>
       </Link>
