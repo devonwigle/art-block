@@ -9,6 +9,7 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 import FavoritesContainer, {
   FavoritesInspoContainer,
 } from "./Components/FavoritesContainer/FavoritesContainer";
+import CanvasContainer from "./Components/CanvasContainer/CanvasContainer"
 import wordData from "./wordData";
 
 function getRandomIndex(wordData: string[]) {
@@ -159,6 +160,9 @@ class App extends Component<any, AppState> {
             </Route>
             <Route exact path="/favorites">
               <FavoritesContainer favorites={this.state.favorites} deleteSavedInspo={this.deleteSavedInspo} />
+            </Route>
+            <Route exact path="/canvas">
+              <CanvasContainer />
             </Route>
           </Switch>
         </div>  
