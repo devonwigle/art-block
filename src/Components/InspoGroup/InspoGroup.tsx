@@ -1,8 +1,9 @@
 import { render } from "@testing-library/react";
 import React from "react";
+import {Link} from "react-router-dom"
 import "./InspoGroup.css";
 import { PicsumImage } from "../../apiCalls/apiCalls";
-//import xBrushStrokes from "../../xBrushStrokes.png"
+import pencil from "../../pencil.png"
 import thickBrush from "../../thickBrush.png";
 
 type InspoGroupProps = {
@@ -10,6 +11,7 @@ type InspoGroupProps = {
   color: string;
   word: string;
   deleteSavedInspo: any;
+  goToDraw: any;
   id: number;
 };
 
@@ -19,6 +21,7 @@ const InspoGroup = ({
   word,
   id,
   deleteSavedInspo,
+  goToDraw,
 }: InspoGroupProps) => {
   return (
     <div className="grouping">
@@ -34,6 +37,11 @@ const InspoGroup = ({
       <button className="delete-button" onClick={() => deleteSavedInspo(id)}>
         <img className="button-image" src={thickBrush} />
       </button>
+      <Link to="/canvas">
+        <button className="draw-button" onClick={() => goToDraw(id)}>
+          <img className="button-image" src={pencil} />
+        </button>
+      </Link>
     </div>
   );
 };
