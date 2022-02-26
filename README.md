@@ -59,9 +59,28 @@ The user is welcomed to an aesthetically pleasing landing page, where they're gi
 The next page a user navigates to is our "Inspiration Creation" page. A pre-made trio of inspiration (one photo, one word, one color with hexcode) will be waiting for a user upon landing on this page. We have provided a few instructions
 on how to use this tool- just click the "?" in the upper right hand corner to get the full instructions.
 
+Inspiration Page:
+
+<img width="500" alt="Inspiration Page" src="https://user-images.githubusercontent.com/69861203/155824373-c30e0c79-e573-4450-ba95-7cf3126ca47a.png">
+
+Instructions pop-up: 
+
+<img width="500" alt="Instructions Modals" src="https://user-images.githubusercontent.com/69861203/155824376-88d6ba36-0ed7-4850-8ef2-ea492d8a92ed.png">
+
+
 Here is a quick demo of the saving, reinspiring, and locking abilities of this page:
 
 ![Creating your Inspirations](https://media.giphy.com/media/Cn5GFw5I3ZNYoawR45/giphy.gif)
+
+To access your saved inspirations, click on the See My Inspirations button to be taken to the favorites page. Here, you can scroll through all your saved trios of inspiration, and you also have the ability to delete ones that no longer inspire you by clicking the "X" underneath the trio.
+
+<img width="500" alt="Favorites Page" src="https://user-images.githubusercontent.com/69861203/155824517-43aa1e1c-19a4-449b-b432-9053a9e375b5.png">
+
+Finally, this application is hooked up with React Router, which provides easy navigation through the pages with forward/back buttons, as well as custom URLS for each page.
+
+![Unique URLs](https://user-images.githubusercontent.com/69861203/155824552-692a1b7e-07ed-46bc-85d7-30ea4d8500da.png)
+
+
 
 ## Future Goals
 
@@ -85,4 +104,4 @@ See below for ways we stretched ourselves even further on this project:
 
 ## Credit
 
-- Loading animation inspired by:
+- Rotating cube animation inspired by: https://codepen.io/afarrar/pen/edwNWP
