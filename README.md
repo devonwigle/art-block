@@ -59,7 +59,7 @@ The user is welcomed to an aesthetically pleasing landing page, where they're gi
 The next page a user navigates to is our "Inspiration Creation" page. A pre-made trio of inspiration (one photo, one word, one color with hexcode) will be waiting for a user upon landing on this page. We have provided a few instructions
 on how to use this tool- just click the "?" in the upper right hand corner to get the full instructions.
 
-Here is a quick demo of the saving, rinspiring, and locking abilities of this page:
+Here is a quick demo of the saving, reinspiring, and locking abilities of this page:
 
 ![Creating your Inspirations](https://media.giphy.com/media/Cn5GFw5I3ZNYoawR45/giphy.gif)
 
@@ -76,12 +76,11 @@ See below for ways we stretched ourselves even further on this project:
 - React Modal ✅
 - Building out our own API using Express ✅
 - Hosting our API and App ✅
--
 
 ## Created By:
 
 - [Emma Chory](https://github.com/Echory)
-- [Devin Wigle](https://github.com/devonwigle)
+- [Devon Wigle](https://github.com/devonwigle)
 - [Rana Jurjus](https://github.com/rjur11)
 
 ## Credit
