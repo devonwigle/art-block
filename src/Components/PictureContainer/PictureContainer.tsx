@@ -17,7 +17,6 @@ function renderPicture(picture: PicsumImage | string, error: boolean): JSX.Eleme
     return <img src={picture.download_url} alt=''/>;
   } else {
     return <ErrorContainer />
-    // return <>{picture}</>;
   }
 }
 

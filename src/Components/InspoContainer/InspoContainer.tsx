@@ -12,7 +12,7 @@ type InspoContainerProps = {
   picture: PicsumImage | string;
   color: string;
   word: string;
-  error: boolean
+  error: boolean;
   onReinspire: React.MouseEventHandler<HTMLButtonElement>;
   onSave: React.MouseEventHandler<HTMLButtonElement>;
   onWordLockClick: React.ChangeEventHandler<HTMLInputElement>;
