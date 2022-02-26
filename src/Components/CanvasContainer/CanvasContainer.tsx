@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { ReactSketchCanvas } from 'react-sketch-canvas';
+import { TwitterPicker } from 'react-color'
 
 const styles = {
   border: '0.0625rem solid #9c9c9c',
@@ -22,17 +23,17 @@ class CanvasContainer extends Component<any, CanvasState> {
     }
   }
   
-  updateColors = (strokeColor: string) => {
-    this.setState({strokeColor})
+
+
+  handleColorChange = (evt: any) => {
+    this.setState({strokeColor: evt.hex})
   }
 
 
   render() {
     return (
       <div className="canvas-container">
-      <button onClick={() => this.updateColors('blue')}>blue</button>
-      <button onClick={() => this.updateColors('green')}>green</button>
-      <button onClick={() => this.updateColors('red')}>red</button>
+      <TwitterPicker onChangeComplete={ this.handleColorChange }/>
       <ReactSketchCanvas
         style={styles}
         width="500"
