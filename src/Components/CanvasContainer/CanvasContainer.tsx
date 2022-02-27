@@ -10,7 +10,6 @@ import { TwitterPicker } from "react-color";
 import SmallLogo from "../Logo/SmallLogo";
 import ChosenGroup from "./ChosenGroup";
 import "./CanvasContainer.css";
-import { createNoSubstitutionTemplateLiteral } from "typescript";
 
 const styles = {
   border: "0.0625rem solid #9c9c9c",
@@ -94,7 +93,18 @@ class CanvasContainer extends Component<ChosenGroupProps, CanvasState> {
             </Link>
           </div>
         </header>
-        <h1 className="announce-title">Sketch Your Thoughts</h1>
+        <div className="header-div">
+          <h1 className="announce-title">Sketch Your Thoughts</h1>
+          <button
+            className="clear-button"
+            onClick={() => {
+              this.canvas.current?.clearCanvas();
+              localStorage.removeItem(this.getLocalStorageKey());
+            }}
+          >
+            Clear Canvas
+          </button>
+        </div>
         <div className="wrapper-canvas-tools">
           <div className="canvas-inspiration">
             {this.maybeRenderGroup()}
