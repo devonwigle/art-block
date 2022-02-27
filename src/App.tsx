@@ -22,7 +22,7 @@ type AppState = {
   color: string;
   word: string;
   favorites: FavoritesInspoContainer[];
-  chosen: number,
+  chosen: FavoritesInspoContainer,
   error: boolean;
   wordIsLocked: boolean;
   pictureIsLocked: boolean;
@@ -43,7 +43,12 @@ class App extends Component<any, AppState> {
       color: "#FFF",
       word: "",
       favorites: [],
-      chosen: 0,
+      chosen: {
+        image: {id: '', download_url: ''},
+        color: '',
+        word: '', 
+        id: 0
+      },
       error: false,
       wordIsLocked: false,
       pictureIsLocked: false,
@@ -107,7 +112,7 @@ class App extends Component<any, AppState> {
             color: this.state.color,
             word: this.state.word,
             id: Date.now(),
-            chosen: this.state.chosen,
+            // chosen: this.state.chosen,
           },
         ],
       });
@@ -129,7 +134,9 @@ class App extends Component<any, AppState> {
 
   goToDraw = (id: number) => {
     const chosen = this.state.favorites.find((favorite) => favorite.id === id)
-    this.setState({chosen: chosen})
+      if(chosen !== undefined) {
+        this.setState({chosen: chosen})
+    }
   }
 
   onWordLockClick() {
