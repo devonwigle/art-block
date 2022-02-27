@@ -6,6 +6,7 @@ import { PicsumImage, Word } from "../../apiCalls/apiCalls";
 import ColorContainer from "../ColorContainer/ColorContainer";
 import { Link } from "react-router-dom";
 import mark1 from "./mark1.png";
+import pencil from "../../pencil.png";
 import Modal from "react-modal";
 
 type InspoContainerProps = {
@@ -24,6 +25,9 @@ const InspoContainer = (props: InspoContainerProps) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <div className="inspo-container">
+      <Link to="/canvas">
+        <img className="pencil-img" src={pencil} alt="pencil" />
+      </Link>
       <button className="question-button" onClick={() => setModalOpen(true)}>
         <img className="mark-img" src={mark1} alt="question mark" />
       </button>

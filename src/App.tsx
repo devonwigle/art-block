@@ -9,7 +9,9 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 import FavoritesContainer, {
   FavoritesInspoContainer,
 } from "./Components/FavoritesContainer/FavoritesContainer";
-import CanvasContainer, {ChosenGroupContainer} from "./Components/CanvasContainer/CanvasContainer"
+import CanvasContainer, {
+  ChosenGroupContainer,
+} from "./Components/CanvasContainer/CanvasContainer";
 import wordData from "./wordData";
 
 function getRandomIndex(wordData: string[]) {
@@ -22,7 +24,7 @@ type AppState = {
   color: string;
   word: string;
   favorites: FavoritesInspoContainer[];
-  chosen: ChosenGroupContainer[],
+  chosen: ChosenGroupContainer[];
   error: boolean;
   wordIsLocked: boolean;
   pictureIsLocked: boolean;
@@ -66,9 +68,9 @@ class App extends Component<any, AppState> {
   }
 
   generateRandomState() {
-    console.log('color', this.state.colorIsLocked)
-    console.log('picture', this.state.pictureIsLocked)
-    console.log('word', this.state.wordIsLocked)
+    console.log("color", this.state.colorIsLocked);
+    console.log("picture", this.state.pictureIsLocked);
+    console.log("word", this.state.wordIsLocked);
     if (!this.state.colorIsLocked) {
       this.setState({
         color: `${randomColor({ luminosity: "random", count: 1 })[0]}`,
@@ -76,26 +78,24 @@ class App extends Component<any, AppState> {
     }
 
     if (!this.state.pictureIsLocked) {
-      this.setState({error: false})
+      this.setState({ error: false });
       let randNum = Math.floor(Math.random() * 1084);
       getImage(randNum)
         .then((result: any) => {
           this.setState({ image: result });
         })
         .catch((error: any) => {
-          this.setState({error: true})
+          this.setState({ error: true });
         });
     }
 
     if (!this.state.wordIsLocked) {
-      this.setState({ error: false })
+      this.setState({ error: false });
       fetchWord()
         .then((word) => {
           this.setState({ word: word.word, wordAPIError: "" });
         })
-        .catch((error: any) =>
-          this.setState({ error: true })
-        );
+        .catch((error: any) => this.setState({ error: true }));
     }
   }
 
@@ -113,12 +113,16 @@ class App extends Component<any, AppState> {
         ],
       });
     }
-    this.clearInputs()
+    this.clearInputs();
   }
 
   clearInputs = () => {
-    this.setState({ wordIsLocked: false, pictureIsLocked: false, colorIsLocked: false });
-  }
+    this.setState({
+      wordIsLocked: false,
+      pictureIsLocked: false,
+      colorIsLocked: false,
+    });
+  };
 
   deleteSavedInspo = (id: number) => {
     const newFavs = this.state.favorites.filter(
@@ -128,21 +132,26 @@ class App extends Component<any, AppState> {
   };
 
   goToDraw = (id: number) => {
-    const chosen = this.state.favorites.find((favorite) => favorite.id === id)
-      if(chosen !== undefined) {
-        console.log('chosen1', chosen)
-        this.setState({
-          chosen: [{
-            image: chosen.image,
-            color: chosen.color,
-            word: chosen.word,
-            id: chosen.id
-          }]
-        })
-      }
-      console.log('chosen', this.state.chosen)
-  }
-    
+    this.setState({
+      chosen: this.findChosen(id),
+    });
+  };
+
+  findChosen = (id: number): FavoritesInspoContainer[] => {
+    const chosen = this.state.favorites.find((favorite) => favorite.id === id);
+    if (chosen !== undefined) {
+      return [
+        {
+          image: chosen.image,
+          color: chosen.color,
+          word: chosen.word,
+          id: chosen.id,
+        },
+      ];
+    }
+    return [];
+  };
+
   onWordLockClick() {
     this.setState({ wordIsLocked: !this.state.wordIsLocked });
   }
@@ -178,13 +187,26 @@ class App extends Component<any, AppState> {
               />
             </Route>
             <Route exact path="/favorites">
-              <FavoritesContainer favorites={this.state.favorites} goToDraw={this.goToDraw} deleteSavedInspo={this.deleteSavedInspo} />
+              <FavoritesContainer
+                favorites={this.state.favorites}
+                goToDraw={this.goToDraw}
+                deleteSavedInspo={this.deleteSavedInspo}
+              />
             </Route>
             <Route exact path="/canvas">
-              <CanvasContainer chosen={this.state.chosen}/>
+              <CanvasContainer chosen={this.state.chosen} />
             </Route>
+            <Route
+              path="canvas/:id"
+              render={(props) => {
+                console.log("wat");
+                const chosen = this.findChosen(parseInt(props.match.params.id));
+                console.log(chosen);
+                return <CanvasContainer chosen={chosen} />;
+              }}
+            />
           </Switch>
-        </div>  
+        </div>
       </div>
     );
   }
