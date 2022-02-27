@@ -37,7 +37,7 @@ const InspoGroup = ({
       <button className="delete-button" onClick={() => deleteSavedInspo(id)}>
         <img className="button-image" src={thickBrush} />
       </button>
-      <Link to={`/canvas`}>
+      <Link to={`/canvas/${id}`}>
         <button className="draw-button" onClick={() => goToDraw(id)}>
           <img className="button-image" src={pencil} />
         </button>

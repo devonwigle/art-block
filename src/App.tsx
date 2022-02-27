@@ -197,7 +197,7 @@ class App extends Component<any, AppState> {
               <CanvasContainer chosen={this.state.chosen} />
             </Route>
             <Route
-              path="canvas/:id"
+              path="/canvas/:id"
               render={(props) => {
                 console.log("wat");
                 const chosen = this.findChosen(parseInt(props.match.params.id));
