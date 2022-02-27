@@ -113,7 +113,6 @@ class App extends Component<any, AppState> {
         ],
       });
     }
-    // this.clearInputs()
   }
 
   clearInputs = () => {
