@@ -3,6 +3,11 @@
   height: 100%;
 }
 
+.wrapper-canvas {
+  display: flex;
+  flex-direction: column;
+}
+
 .canvas-header {
   display: flex;
   justify-content: space-between;

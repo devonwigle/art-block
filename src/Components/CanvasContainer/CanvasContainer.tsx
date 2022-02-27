@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom'
 import { ReactSketchCanvas } from 'react-sketch-canvas';
+import { PicsumImage } from "../../apiCalls/apiCalls";
 import { TwitterPicker } from 'react-color'
 import SmallLogo from '../Logo/SmallLogo';
-import InspoGroup from "../InspoGroup/InspoGroup";
+import ChosenGroup from "./ChosenGroup";
 import './CanvasContainer.css'
 
 const styles = {
@@ -18,19 +19,29 @@ type CanvasState = {
   strokeColor: string
 }
 
+export type ChosenGroupContainer = {
+  image: PicsumImage;
+  color: string;
+  word: string;
+  id: number;
+}
 
-class CanvasContainer extends Component<any, CanvasState> {
-  constructor(props: any) {
+interface ChosenGroupProps {
+  chosen: ChosenGroupContainer[];
+}
+
+
+class CanvasContainer extends Component<ChosenGroupProps, CanvasState> {
+  constructor(props: ChosenGroupProps) {
     super(props)
     this.state = {
-      strokeColor: "black"
+      strokeColor: this.props.chosen[0].color
     }
   }
 
   handleColorChange = (event: any) => {
     this.setState({strokeColor: event.hex})
   }
-
 
   render() {
     return (
@@ -47,16 +58,18 @@ class CanvasContainer extends Component<any, CanvasState> {
           </div>
         </header>
         <h1 className='announce-title'>Sketch Your Thoughts</h1>
-        <div className='canvas-inspiration'>
-          {/* <InspoGroup key={id} image={image} color={color} word={word} id={id} /> */}
-          <TwitterPicker onChangeComplete={ this.handleColorChange }/>
+        <div className='wrapper-canvas'>
+          <div className='canvas-inspiration'>
+            <ChosenGroup image={this.props.chosen[0].image} color={this.props.chosen[0].color} word={this.props.chosen[0].word} id={this.props.chosen[0].id}/>
+            <TwitterPicker onChangeComplete={ this.handleColorChange }/>
+          </div>
+          <ReactSketchCanvas
+            style={styles}
+            width="500"
+            height="500"
+            strokeColor={this.state.strokeColor}
+          />
         </div>
-        <ReactSketchCanvas
-          style={styles}
-          width="500"
-          height="500"
-          strokeColor={this.state.strokeColor}
-        />
       </div>
     )
   }

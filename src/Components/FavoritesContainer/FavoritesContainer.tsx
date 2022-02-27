@@ -10,7 +10,6 @@ export type FavoritesInspoContainer = {
   color: string;
   word: string;
   id: number;
-  // chosen: number;
 };
 interface FavoritesContainerProps {
   favorites: FavoritesInspoContainer[];
