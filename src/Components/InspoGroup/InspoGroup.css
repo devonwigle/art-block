@@ -25,6 +25,7 @@
   padding-top: 60px;
 }
 
+.draw-button,
 .delete-button {
   font-family: "Dancing Script", cursive;
   border: none;

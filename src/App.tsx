@@ -9,6 +9,7 @@ import LandingPage from "./Components/LandingPage/LandingPage";
 import FavoritesContainer, {
   FavoritesInspoContainer,
 } from "./Components/FavoritesContainer/FavoritesContainer";
+import CanvasContainer, {ChosenGroupContainer} from "./Components/CanvasContainer/CanvasContainer"
 import wordData from "./wordData";
 
 function getRandomIndex(wordData: string[]) {
@@ -21,6 +22,7 @@ type AppState = {
   color: string;
   word: string;
   favorites: FavoritesInspoContainer[];
+  chosen: ChosenGroupContainer[],
   error: boolean;
   wordIsLocked: boolean;
   pictureIsLocked: boolean;
@@ -41,6 +43,7 @@ class App extends Component<any, AppState> {
       color: "#FFF",
       word: "",
       favorites: [],
+      chosen: [],
       error: false,
       wordIsLocked: false,
       pictureIsLocked: false,
@@ -63,6 +66,9 @@ class App extends Component<any, AppState> {
   }
 
   generateRandomState() {
+    console.log('color', this.state.colorIsLocked)
+    console.log('picture', this.state.pictureIsLocked)
+    console.log('word', this.state.wordIsLocked)
     if (!this.state.colorIsLocked) {
       this.setState({
         color: `${randomColor({ luminosity: "random", count: 1 })[0]}`,
@@ -86,7 +92,6 @@ class App extends Component<any, AppState> {
       fetchWord()
         .then((word) => {
           this.setState({ word: word.word, wordAPIError: "" });
-          console.log(this.state);
         })
         .catch((error: any) =>
           this.setState({ error: true })
@@ -119,10 +124,25 @@ class App extends Component<any, AppState> {
     const newFavs = this.state.favorites.filter(
       (favorite) => favorite.id !== id
     );
-    console.log(newFavs);
     this.setState({ favorites: newFavs });
   };
 
+  goToDraw = (id: number) => {
+    const chosen = this.state.favorites.find((favorite) => favorite.id === id)
+      if(chosen !== undefined) {
+        console.log('chosen1', chosen)
+        this.setState({
+          chosen: [{
+            image: chosen.image,
+            color: chosen.color,
+            word: chosen.word,
+            id: chosen.id
+          }]
+        })
+      }
+      console.log('chosen', this.state.chosen)
+  }
+    
   onWordLockClick() {
     this.setState({ wordIsLocked: !this.state.wordIsLocked });
   }
@@ -158,7 +178,10 @@ class App extends Component<any, AppState> {
               />
             </Route>
             <Route exact path="/favorites">
-              <FavoritesContainer favorites={this.state.favorites} deleteSavedInspo={this.deleteSavedInspo} />
+              <FavoritesContainer favorites={this.state.favorites} goToDraw={this.goToDraw} deleteSavedInspo={this.deleteSavedInspo} />
+            </Route>
+            <Route exact path="/canvas">
+              <CanvasContainer chosen={this.state.chosen}/>
             </Route>
           </Switch>
         </div>  

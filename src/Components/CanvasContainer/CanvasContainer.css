@@ -1,0 +1,18 @@
+.canvas-container {
+  width: 100%;
+  height: 100%;
+}
+
+.wrapper-canvas {
+  display: flex;
+  flex-direction: column;
+}
+
+.canvas-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-buttons {
+  margin-left: 15px;
+}

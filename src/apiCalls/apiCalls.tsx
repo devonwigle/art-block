@@ -14,11 +14,9 @@ export const getImage = async (id: number): Promise<PicsumImage> => {
       if (!response.ok) {
         throw `${response.status}`;
       }
-      console.log(response);
       return response.json();
     })
     .then((result) => {
-      console.log(result);
       return result;
     });
 
@@ -31,11 +29,9 @@ export const fetchWord = async (): Promise<Word> => {
       if (!response.ok) {
         throw `${response.status}`;
       }
-      console.log(response);
       return response.json();
     })
     .then((result) => {
-      console.log(result);
       return result.words;
     });
 
