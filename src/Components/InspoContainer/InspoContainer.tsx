@@ -19,6 +19,7 @@ type InspoContainerProps = {
   onWordLockClick: React.ChangeEventHandler<HTMLInputElement>;
   onPictureLockClick: React.ChangeEventHandler<HTMLInputElement>;
   onColorLockClick: React.ChangeEventHandler<HTMLInputElement>;
+  clearInputs: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 const InspoContainer = (props: InspoContainerProps) => {
@@ -96,7 +97,7 @@ const InspoContainer = (props: InspoContainerProps) => {
           Reinspire
         </button>
         <Link to="/favorites">
-          <button className="inspo-buttons">See My Inspirations</button>
+          <button onClick={(event) => props.clearInputs(event)} className="inspo-buttons">See My Inspirations</button>
         </Link>
       </div>
     </div>
