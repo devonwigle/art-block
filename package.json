@@ -12,6 +12,7 @@
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "@types/react-router-dom": "^5.3.3",
+    "@types/sass": "^1.43.1",
     "randomcolor": "^0.6.2",
     "react": "^17.0.2",
     "react-color": "^2.19.3",
@@ -20,6 +21,7 @@
     "react-router-dom": "^5.3.0",
     "react-scripts": "5.0.0",
     "react-sketch-canvas": "^6.1.0",
+    "sass": "^1.49.9",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4"
   },

@@ -3,9 +3,10 @@
   height: 100%;
 }
 
-.wrapper-canvas {
+.wrapper-canvas-tools {
   display: flex;
-  flex-direction: column;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .canvas-header {
