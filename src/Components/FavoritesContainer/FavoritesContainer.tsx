@@ -14,7 +14,6 @@ export type FavoritesInspoContainer = {
 interface FavoritesContainerProps {
   favorites: FavoritesInspoContainer[];
   deleteSavedInspo: any;
-  goToDraw: any;
 }
 
 class FavoritesContainer extends Component<FavoritesContainerProps> {
@@ -33,7 +32,14 @@ class FavoritesContainer extends Component<FavoritesContainerProps> {
         <h1 className="announce-title">Your Favorite Inspirations</h1>
         <div className="inspo-group-div">
           {this.props.favorites.map(({ image, color, word, id }) => (
-            <InspoGroup goToDraw={this.props.goToDraw} deleteSavedInspo={this.props.deleteSavedInspo} key={id} image={image} color={color} word={word} id={id} />
+            <InspoGroup
+              deleteSavedInspo={this.props.deleteSavedInspo}
+              key={id}
+              image={image}
+              color={color}
+              word={word}
+              id={id}
+            />
           ))}
         </div>
       </div>
