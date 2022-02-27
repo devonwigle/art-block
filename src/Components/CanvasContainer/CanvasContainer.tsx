@@ -58,7 +58,7 @@ class CanvasContainer extends Component<ChosenGroupProps, CanvasState> {
           </div>
         </header>
         <h1 className='announce-title'>Sketch Your Thoughts</h1>
-        <div className='wrapper-canvas'>
+        <div className='wrapper-canvas-tools'>
           <div className='canvas-inspiration'>
             <ChosenGroup image={this.props.chosen[0].image} color={this.props.chosen[0].color} word={this.props.chosen[0].word} id={this.props.chosen[0].id}/>
             <TwitterPicker onChangeComplete={ this.handleColorChange }/>
