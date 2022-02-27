@@ -113,7 +113,6 @@ class App extends Component<any, AppState> {
         ],
       });
     }
-    this.clearInputs()
   }
 
   clearInputs = () => {
@@ -175,6 +174,7 @@ class App extends Component<any, AppState> {
                 onWordLockClick={() => this.onWordLockClick()}
                 onPictureLockClick={() => this.onPictureLockClick()}
                 onColorLockClick={() => this.onColorLockClick()}
+                clearInputs={() => this.clearInputs()}
               />
             </Route>
             <Route exact path="/favorites">
