@@ -1,9 +1,9 @@
 import { render } from "@testing-library/react";
 import React from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import "./InspoGroup.css";
 import { PicsumImage } from "../../apiCalls/apiCalls";
-import pencil from "../../pencil.png"
+import pencil from "../../pencil.png";
 import thickBrush from "../../thickBrush.png";
 
 type InspoGroupProps = {
@@ -37,7 +37,7 @@ const InspoGroup = ({
       <button className="delete-button" onClick={() => deleteSavedInspo(id)}>
         <img className="button-image" src={thickBrush} />
       </button>
-      <Link to="/canvas">
+      <Link to={`/canvas/${id}`}>
         <button className="draw-button" onClick={() => goToDraw(id)}>
           <img className="button-image" src={pencil} />
         </button>
