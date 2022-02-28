@@ -1,5 +1,3 @@
-import { createYield } from "typescript";
-
 describe("Load homepage and render the expected page elements", () => {
   it("Should confirm that true is equal to true", () => {
     expect(true).to.equal(true);
@@ -40,6 +38,4 @@ describe("Load homepage and render the expected page elements", () => {
       .url()
       .should("eq", "http://localhost:3000/inspiration");
   });
-  
-  // Need to test for when inspos are actually in the container
 });
