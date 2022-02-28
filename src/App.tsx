@@ -24,7 +24,6 @@ type AppState = {
   color: string;
   word: string;
   favorites: FavoritesInspoContainer[];
-  chosen: ChosenGroupContainer[];
   error: boolean;
   wordIsLocked: boolean;
   pictureIsLocked: boolean;
@@ -45,7 +44,6 @@ class App extends Component<any, AppState> {
       color: "#FFF",
       word: "",
       favorites: [],
-      chosen: [],
       error: false,
       wordIsLocked: false,
       pictureIsLocked: false,
@@ -130,12 +128,6 @@ class App extends Component<any, AppState> {
     this.setState({ favorites: newFavs });
   };
 
-  goToDraw = (id: number) => {
-    this.setState({
-      chosen: this.findChosen(id),
-    });
-  };
-
   findChosen = (id: number): FavoritesInspoContainer[] => {
     const chosen = this.state.favorites.find((favorite) => favorite.id === id);
     if (chosen !== undefined) {
@@ -189,12 +181,11 @@ class App extends Component<any, AppState> {
             <Route exact path="/favorites">
               <FavoritesContainer
                 favorites={this.state.favorites}
-                goToDraw={this.goToDraw}
                 deleteSavedInspo={this.deleteSavedInspo}
               />
             </Route>
             <Route exact path="/canvas">
-              <CanvasContainer chosen={this.state.chosen} />
+              <CanvasContainer chosen={[]} />
             </Route>
             <Route
               path="/canvas/:id"
