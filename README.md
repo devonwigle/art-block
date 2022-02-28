@@ -48,8 +48,10 @@ Alternatively, you can access the deployed site HERE
 
 ## Features
 
-- LocalStorage for data persistence
+- Local Storage for data persistence
 - 100% Lighthouse Accessibility Rating
+- Sketching capabilities with a built in canvas
+
 
 ## See the Site in Action!
 
@@ -73,18 +75,17 @@ Here is a quick demo of the saving, reinspiring, and locking abilities of this p
 
 ![Creating your Inspirations](https://media.giphy.com/media/ruOmeyEUc1IfPafIRx/giphy.gif)
 
-To access your saved inspirations, click on the See My Inspirations button to be taken to the favorites page. Here, you can scroll through all your saved trios of inspiration, and you also have the ability to delete ones that no longer inspire you by clicking the "X" underneath the trio.
+To access any saved inspirations, a user can click on the See My Inspirations button to be taken to the favorites page. Here, they can scroll through all saved trios of inspiration, and they also have the ability to delete ones that no longer inspire them by clicking the "X" underneath the trio.
 
 <img width="500" alt="favs-page" src="https://user-images.githubusercontent.com/69861203/156024817-0797012d-c84d-40af-bac1-5b438c3cf3a0.png">
 
-If the user is feeling particularly inspired, they have the option to access a blank canvas to sketch their thoughts on. There are two ways to access a canvas- either by clicking the pencil image on the Inspirations page, or by heading to the Favorites Page and selecting the pencil button on any grouping of Inspirations there. It will take the user to a canvas specifically hooked up to those inspirations, and display them side by side. 
+If the user is feeling particularly inspired, they have the option to access a blank canvas to sketch their thoughts on. There are two ways to access a canvas: either by clicking the pencil image on the Inspirations page, or by heading to the Favorites Page and selecting the pencil button on any grouping of Inspirations there. It will take the user to a canvas specifically hooked up to those inspirations, and display them side by side. When accessing the canvas from a particular inspiration group, the first color a user is given to draw with is the same color as the hexcode in the trio. The user can then adjust colors as needed. Thanks to local storage, a user can access their artwork at any time, until the clear canvas button is clicked.
 
 ![Accessing the drawing canvas](https://media.giphy.com/media/3NxtD3wgECFCbp8l4k/giphy.gif)
 
-Finally, this application is hooked up with React Router, which provides easy navigation through the pages with forward/back buttons, as well as custom URLS for each page.
+Finally, this application is hooked up with React Router, which provides easy navigation through the pages with forward/back buttons, as well as custom URLS for each page (this helps with quick access to specfic canvas pages, too!).
 
 ![Unique URLs](https://user-images.githubusercontent.com/69861203/155824552-692a1b7e-07ed-46bc-85d7-30ea4d8500da.png)
-
 
 
 ## Future Goals
