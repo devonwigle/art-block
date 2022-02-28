@@ -30,8 +30,10 @@ const InspoContainer = (props: InspoContainerProps) => {
       <div className="misc-buttons">
             <Link to="/canvas">
           <div className="pencil-group">
+            <button className="pencil-img" onClick={(event) => props.clearInputs(event)}>
               <img className="pencil-img" src={pencil} alt="pencil" />
               <p className="pencil-text">Sketch</p>
+            <button/>
           </div>
             </Link>
         <div className="questionMark-group">

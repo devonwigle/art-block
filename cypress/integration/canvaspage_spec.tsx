@@ -3,39 +3,36 @@ describe("Load homepage and render the expected page elements", () => {
     expect(true).to.equal(true);
   });
   it("Should be able to visit the page and render the logo", () => {
-    cy.visit("http://localhost:3000/favorites")
+    cy.visit("http://localhost:3000/canvas")
       .get("div.small-logo-loca")
       .should("be.visible");
   });
   it("Should be able to visit the page and render the 'Get More Inspiration' button", () => {
-    cy.visit("http://localhost:3000/favorites")
-      .get("div.fav-header")
+    cy.visit("http://localhost:3000/canvas")
+      .get("div.nav-buttons")
       .get("button")
       .contains("Get More Inspirations");
   });
   it("Should be able to visit the page and render the 'Your Favorite Inspirations' header", () => {
-    cy.visit("http://localhost:3000/favorites").contains(
+    cy.visit("http://localhost:3000/canvas").contains(
       "h1",
-      "Your Favorite Inspirations"
+      "Sketch Your Thoughts"
     );
   });
-  it("Should be able to visit the page and render the favorites container", () => {
-    cy.visit("http://localhost:3000/favorites").get("div.favorite");
+  it("Should be able to visit the page and render the canvas color", () => {
+    cy.visit("http://localhost:3000/canvas").get("div.canvas-inspiration");
   });
-  it("Should be able to delete inspirations", () => {
-    cy.visit("http://localhost:3000/inspiration")
-    cy.wait(500)
-    .get(".save-button")
-    .click()
-    .get(".see-inspo-button")
-    .click()
-    .get("button.delete-button")
+  it("Should be able to visit the page and render the canvas color", () => {
+    cy.visit("http://localhost:3000/canvas").get("rect");
+  });
+  it("Should be able to click clear canvas button", () => {
+    cy.get(".clear-button")
     .click()
   })
   it("Should be able to click the 'Get More Inspiration' button and go to Inspiration page", () => {
-    cy.get("button")
-      .click()
-      .url()
-      .should("eq", "http://localhost:3000/inspiration");
+    cy.get(".more-inspo")
+    .click()
+    .url()
+    .should("eq", "http://localhost:3000/inspiration");
   });
-});
+})

@@ -85,7 +85,7 @@ class CanvasContainer extends Component<ChosenGroupProps, CanvasState> {
           <SmallLogo />
           <div className="nav-buttons">
             <Link to="/inspiration">
-              <button className="get-more-inspo">Get More Inspirations</button>
+              <button className="get-more-inspo more-inspo">Get More Inspirations</button>
             </Link>
             <Link to="/favorites">
               <button className="get-more-inspo">

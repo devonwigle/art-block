@@ -1,5 +1,3 @@
-import { createYield } from "typescript";
-
 describe("Load Inspiration page and render the necessary elements", () => {
   beforeEach(() => {
     cy.visit("http://localhost:3000")
@@ -73,5 +71,4 @@ describe("Load Inspiration page and render the necessary elements", () => {
       .url()
       .should("eq", "http://localhost:3000/favorites");
   });
-  //SAD PATHS
 });
