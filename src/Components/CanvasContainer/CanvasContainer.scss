@@ -1,4 +1,5 @@
 @import '../../scss/_mixins.scss';
+@import '../../scss/_variables.scss';
 
 .canvas-container {
   @include height-width(100%, 100%)
@@ -19,29 +20,25 @@
 }
 
 .header-div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include display-jContent-aItems(flex, center, center);
   flex-direction: row;
 }
 
+.color-picker {
+  margin-left: 35px;
+}
+
 .clear-button {
-  width: 150px;
-  font-size: 14px;
-  margin-left: 55px;
+  @include font-family-size($openSans, 16px);
   cursor: pointer;
-  font-size: 16px;
-  font-family: "Open Sans", sans-serif;
-  letter-spacing: 2px;
-  text-decoration: none;
-  text-transform: uppercase;
-  color: #000;
   border: 3px solid;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  color: $black;
+  letter-spacing: 2px;
+  margin-top: 18px;
   padding: 0.25em 0.5em;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
-    5px 5px 0px 0px;
   position: relative;
-  user-select: none;
-  -webkit-user-select: none;
+  text-transform: uppercase;
   touch-action: manipulation;
+  width: 150px;
 }
