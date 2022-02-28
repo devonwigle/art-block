@@ -9,8 +9,7 @@ import { PicsumImage } from "../../apiCalls/apiCalls";
 import { TwitterPicker } from "react-color";
 import SmallLogo from "../Logo/SmallLogo";
 import ChosenGroup from "./ChosenGroup";
-import "./CanvasContainer.css";
-import { createNoSubstitutionTemplateLiteral } from "typescript";
+import "./CanvasContainer.scss";
 
 const styles = {
   border: "0.0625rem solid #9c9c9c",

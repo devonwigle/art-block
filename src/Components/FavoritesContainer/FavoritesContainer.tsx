@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./FavoritesContainer.css";
+import "./FavoritesContainer.scss";
 import { PicsumImage } from "../../apiCalls/apiCalls";
 import SmallLogo from "../../Components/Logo/SmallLogo";
 import InspoGroup from "../InspoGroup/InspoGroup";

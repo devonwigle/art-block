@@ -1,6 +1,6 @@
 import { PicsumImage } from "../../apiCalls/apiCalls";
 import ErrorContainer from "../ErrorContainer/ErrorContainer"
-import "./PictureContainer.css";
+import "./PictureContainer.scss";
 
 type PictureContainerProps = {
   picture: PicsumImage | string;

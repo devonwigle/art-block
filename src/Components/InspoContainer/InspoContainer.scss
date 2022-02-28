@@ -1,0 +1,81 @@
+@import '../../scss/_variables.scss';
+@import '../../scss/_mixins.scss';
+
+.contents {
+  @include display-justContent(flex, space-around);
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.buttons {
+  @include display-jContent-aItems(flex, center, center);
+  margin: 10px;
+}
+
+button {
+  margin: 5px;
+}
+
+.question-button {
+  background: none;
+  border: none;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.mark-img {
+  @include height-width(50px, 80px);
+}
+
+.inspo-buttons,
+button:hover {
+  cursor: pointer;
+}
+
+.Modal {
+  background-color: $fadedBackground;
+  border: 1px solid $black;
+  border-radius: 5px;
+  bottom: auto;
+  left: 40px;
+  position: absolute;
+  right: 40px;
+  top: 40px;
+  text-align: center;
+}
+
+.Modal:focus {
+  outline: none;
+  border-color: $black;
+}
+
+h1 {
+  @include font-family-size-weight($tangerine, 72px, 400px);
+  color: $black;
+  margin: 0;
+  padding: 10px;
+}
+
+.modal-text {
+  @include font-family-size-weight($roboto, 18px, 300px);
+  color: $black;
+  margin-top: -15px;
+  padding: 10px;
+}
+
+.inspo-buttons {
+  @include font-family-size($openSans, 16px);
+  @include height-width(38px, 300px);
+  border: 3px solid;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  color: $black;
+  letter-spacing: 2px;
+  margin-right: 20px;
+  margin-top: 26px;
+  padding: 0.25em 0.5em;
+  position: relative;
+  text-transform: uppercase;
+  touch-action: manipulation;
+}

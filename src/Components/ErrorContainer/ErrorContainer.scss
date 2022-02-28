@@ -1,0 +1,12 @@
+@import '../../scss/_mixins.scss';
+
+.message-box {
+  @include display-justContent(flex, center);
+  @include height-width(300px, 450px);
+  flex-direction: column;
+}
+
+.message-text {
+  @include font-family-size(Bebas Neue, 32px);
+  margin: 0;
+}

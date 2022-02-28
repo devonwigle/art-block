@@ -1,6 +1,6 @@
 import React from "react";
 import { Word } from "../../apiCalls/apiCalls";
-import "./WordContainer.css";
+import "./WordContainer.scss";
 
 type WordContainerProps = {
   word: Word | string;

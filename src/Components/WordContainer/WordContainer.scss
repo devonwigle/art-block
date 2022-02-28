@@ -1,0 +1,14 @@
+@import '../../scss/_mixins.scss';
+
+.random-word {
+  @include font-family-size(Bebas Neue, 72px);
+}
+
+.checkbox-div {
+  @include display-justContent(flex, center);
+}
+
+.word-box {
+  @include display-jContent-aContent-flexDir(flex, space-between, center, column);
+  width: 450px;
+}

@@ -1,0 +1,16 @@
+@import './scss/_variables.scss';
+
+.App {
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+  background-color: $mainColor;
+  // background-color: #f5ebe0;
+}
+
+.flex-all {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  min-height: 100%
+}

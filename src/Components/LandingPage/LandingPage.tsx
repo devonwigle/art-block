@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../Logo/Logo";
-import "./LandingPage.css";
+import "./LandingPage.scss";
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
