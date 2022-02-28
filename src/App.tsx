@@ -1,22 +1,15 @@
-import React, { Component } from "react";
-import { Route, Link, Switch, RouteComponentProps } from "react-router-dom";
+import { Component } from "react";
+import { Route, Switch } from "react-router-dom";
 import "./App.scss";
 import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
-import { getImage, fetchWord, PicsumImage, Word } from "./apiCalls/apiCalls";
+import { getImage, fetchWord, PicsumImage } from "./apiCalls/apiCalls";
 import randomColor from "randomcolor";
 import LandingPage from "./Components/LandingPage/LandingPage";
 import FavoritesContainer, {
   FavoritesInspoContainer,
 } from "./Components/FavoritesContainer/FavoritesContainer";
-import CanvasContainer, {
-  ChosenGroupContainer,
-} from "./Components/CanvasContainer/CanvasContainer";
-import wordData from "./wordData";
-
-function getRandomIndex(wordData: string[]) {
-  return Math.floor(Math.random() * wordData.length);
-}
+import CanvasContainer from "./Components/CanvasContainer/CanvasContainer";
 
 type AppState = {
   idNum: number;
@@ -66,9 +59,6 @@ class App extends Component<any, AppState> {
   }
 
   generateRandomState() {
-    console.log("color", this.state.colorIsLocked);
-    console.log("picture", this.state.pictureIsLocked);
-    console.log("word", this.state.wordIsLocked);
     if (!this.state.colorIsLocked) {
       this.setState({
         color: `${randomColor({ luminosity: "random", count: 1 })[0]}`,
@@ -190,9 +180,7 @@ class App extends Component<any, AppState> {
             <Route
               path="/canvas/:id"
               render={(props) => {
-                console.log("wat");
                 const chosen = this.findChosen(parseInt(props.match.params.id));
-                console.log(chosen);
                 return <CanvasContainer chosen={chosen} />;
               }}
             />
