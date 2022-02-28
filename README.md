@@ -32,6 +32,7 @@ We will provide you a random color, image, and word of inspiration in the hopes 
   - [See the deployed API](https://art-block-word-api.herokuapp.com/api/v1/words)
 - Figma [Wireframe](https://www.figma.com/file/b7y9VkD9VE3DVPQUKZvp1K/Art-Block?node-id=25%3A106)
 - [GitHub Project Board](https://github.com/users/devonwigle/projects/3)
+- [Color Picker External Package](https://www.npmjs.com/package/react-color)
 
 ## Installation and Set-Up
 
@@ -61,20 +62,24 @@ on how to use this tool- just click the "?" in the upper right hand corner to ge
 
 Inspiration Page:
 
-<img width="500" alt="Inspiration Page" src="https://user-images.githubusercontent.com/69861203/155824373-c30e0c79-e573-4450-ba95-7cf3126ca47a.png">
+<img width="500" alt="inspo-page" src="https://user-images.githubusercontent.com/69861203/156024254-f9888965-53de-4133-a6b7-3d76be9a9c8c.png">
 
 Instructions pop-up: 
 
-<img width="500" alt="Instructions Modals" src="https://user-images.githubusercontent.com/69861203/155824376-88d6ba36-0ed7-4850-8ef2-ea492d8a92ed.png">
+<img width="500" alt="modal-view" src="https://user-images.githubusercontent.com/69861203/156024296-e920c58b-1847-4943-8dd9-954de65a5884.png">
 
 
 Here is a quick demo of the saving, reinspiring, and locking abilities of this page:
 
-![Creating your Inspirations](https://media.giphy.com/media/Cn5GFw5I3ZNYoawR45/giphy.gif)
+![Creating your Inspirations](https://media.giphy.com/media/ruOmeyEUc1IfPafIRx/giphy.gif)
 
 To access your saved inspirations, click on the See My Inspirations button to be taken to the favorites page. Here, you can scroll through all your saved trios of inspiration, and you also have the ability to delete ones that no longer inspire you by clicking the "X" underneath the trio.
 
-<img width="500" alt="Favorites Page" src="https://user-images.githubusercontent.com/69861203/155824517-43aa1e1c-19a4-449b-b432-9053a9e375b5.png">
+<img width="500" alt="favs-page" src="https://user-images.githubusercontent.com/69861203/156024817-0797012d-c84d-40af-bac1-5b438c3cf3a0.png">
+
+If the user is feeling particularly inspired, they have the option to access a blank canvas to sketch their thoughts on. There are two ways to access a canvas- either by clicking the pencil image on the Inspirations page, or by heading to the Favorites Page and selecting the pencil button on any grouping of Inspirations there. It will take the user to a canvas specifically hooked up to those inspirations, and display them side by side. 
+
+![Accessing the drawing canvas](https://media.giphy.com/media/3NxtD3wgECFCbp8l4k/giphy.gif)
 
 Finally, this application is hooked up with React Router, which provides easy navigation through the pages with forward/back buttons, as well as custom URLS for each page.
 
@@ -105,3 +110,6 @@ See below for ways we stretched ourselves even further on this project:
 ## Credit
 
 - Rotating cube animation inspired by: https://codepen.io/afarrar/pen/edwNWP
+- [Pencil Image](https://www.pngrepo.com/svg/144021/pencil-drawing)
+- [Question Mark Image](https://www.vexels.com/png-svg/preview/152285/3d-question-mark-drawing)
+- [X Delete Image](https://www.onlygfx.com/12-grunge-x-brush-stroke-png-transparent/)
