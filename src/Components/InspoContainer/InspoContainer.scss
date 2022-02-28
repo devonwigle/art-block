@@ -25,6 +25,10 @@ button {
   top: 0;
 }
 
+.questionMark-text {
+  margin-top: -4px;
+}
+
 .mark-img {
   @include height-width(50px, 80px);
 }
@@ -89,4 +93,20 @@ h1 {
   right: 1%;
   height: 50px;
   width: 50px;
+}
+
+.questionMark-text,
+.pencil-group {
+  color: $mainColor;
+}
+
+.questionMark-text:hover,
+.pencil-group:hover {
+  color: $black
+}
+
+.pencil-text {
+  position: absolute;
+  top: 15%;
+  right: 1%;
 }

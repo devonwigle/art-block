@@ -11,6 +11,10 @@
   margin-bottom: 20px;
 }
 
+.canvas-inspiration {
+  width: 344px;
+}
+
 .canvas-header {
   @include display-justContent(flex, space-between);
 }
