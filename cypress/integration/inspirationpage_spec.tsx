@@ -1,3 +1,5 @@
+import { createYield } from "typescript";
+
 describe("Load Inspiration page and render the necessary elements", () => {
   beforeEach(() => {
     cy.visit("http://localhost:3000")
@@ -45,20 +47,26 @@ describe("Load Inspiration page and render the necessary elements", () => {
   it("Should be able to check 'This Inspires Me' checkboxes", () => {
     cy.get("div.image-box").get("[type='checkbox']").check();
   });
-  it.only("Should be able to uncheck 'This Inspires Me' checkboxes", () => {
-    cy.get("div.image-box")
-      .get("[type='checkbox']")
-      .check()
-      .get("div.image-box")
-      .get("[type='checkbox']")
-      .uncheck();
-  });
-  it("Should render 'Save Inspiration', 'Reinspire', and 'See all Favorites' button", () => {
-    cy.get("button").siblings();
-    cy.get("button").first().contains("Save Inspiration");
-    cy.get("button").first().next().contains("Reinspire");
-    cy.get("button").last().contains("See My Inspirations");
-  });
+  // it("Should be able to uncheck 'This Inspires Me' checkboxes", () => {
+  //   cy.get("div.image-box")
+  //     .get("[type='checkbox']")
+  //     .check()
+  //     .get("div.image-box")
+  //     .get("[type='checkbox']")
+  //     .uncheck();
+  // });
+  // it("Should render 'Save Inspiration', 'Reinspire', and 'See all Favorites' button", () => {
+  //   cy.get("button").siblings();
+  //   cy.get("button").first().contains("Save Inspiration");
+  //   cy.get("button").first().next().contains("Reinspire");
+  //   cy.get("button").last().contains("See My Inspirations");
+  // });
+  it("Should be able to click pencil button and go to canvas page", () => {
+    cy.get(".pencil-img")
+    .click()
+    .url()
+    .should("eq","http://localhost:3000/canvas" )
+  } )
   it("Should be able to click the 'See My Inspirations' button and go to Favorites page", () => {
     cy.get("button")
       .last()

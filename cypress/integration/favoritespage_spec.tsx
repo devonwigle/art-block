@@ -24,8 +24,6 @@ describe("Load homepage and render the expected page elements", () => {
   it("Should be able to visit the page and render the favorites container", () => {
     cy.visit("http://localhost:3000/favorites").get("div.favorite");
   });
-   
-  // })
   it("Should be able to delete inspirations", () => {
     cy.visit("http://localhost:3000/inspiration")
     cy.wait(500)
