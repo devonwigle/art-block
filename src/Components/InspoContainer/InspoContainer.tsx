@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import PictureContainer from "../PictureContainer/PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
 import "./InspoContainer.scss";
-import { PicsumImage, Word } from "../../apiCalls/apiCalls";
+import { PicsumImage } from "../../apiCalls/apiCalls";
 import ColorContainer from "../ColorContainer/ColorContainer";
 import { Link } from "react-router-dom";
 import questionMark from "./questionMark.png";
 import pencil from "../../pencil.png";
 import Modal from "react-modal";
-
 
 type InspoContainerProps = {
   picture: PicsumImage | string;
@@ -28,16 +27,22 @@ const InspoContainer = (props: InspoContainerProps) => {
   return (
     <div className="inspo-container">
       <div className="misc-buttons">
-            <Link to="/canvas">
+        <Link to="/canvas">
           <div className="pencil-group">
-            <button className="pencil-img" onClick={(event) => props.clearInputs(event)}>
+            <button
+              className="pencil-button"
+              onClick={(event) => props.clearInputs(event)}
+            >
               <img className="pencil-img" src={pencil} alt="pencil" />
               <p className="pencil-text">Sketch</p>
-            <button/>
+            </button>
           </div>
-            </Link>
+        </Link>
         <div className="questionMark-group">
-          <button className="question-button" onClick={() => setModalOpen(true)}>
+          <button
+            className="question-button"
+            onClick={() => setModalOpen(true)}
+          >
             <img className="mark-img" src={questionMark} alt="question mark" />
             <p className="questionMark-text">Information</p>
           </button>
@@ -71,12 +76,14 @@ const InspoContainer = (props: InspoContainerProps) => {
           image.
         </p>
         <p className="modal-text">
-          To see all your saved Inspirations, click the See my
-          Inspiration button to head to the favorites page! We hope to bring you
-          some inspiration for your next work of art!
+          To see all your saved Inspirations, click the See my Inspiration
+          button to head to the favorites page! We hope to bring you some
+          inspiration for your next work of art!
         </p>
         <p className="modal-text">
-          If you just want to sketch, click the pencil.  If you want to see an inspiration while you sketch, checkout your saved inspirations and click the pencil under your inspiration.
+          If you just want to sketch, click the pencil. If you want to see an
+          inspiration while you sketch, checkout your saved inspirations and
+          click the pencil under your inspiration.
         </p>
         <p className="modal-text">
           Click the ESC key or outside of this popup to leave this page.
@@ -111,7 +118,12 @@ const InspoContainer = (props: InspoContainerProps) => {
           Reinspire
         </button>
         <Link to="/favorites">
-          <button onClick={(event) => props.clearInputs(event)} className="inspo-buttons see-inspo-button">See My Inspirations</button>
+          <button
+            onClick={(event) => props.clearInputs(event)}
+            className="inspo-buttons see-inspo-button"
+          >
+            See My Inspirations
+          </button>
         </Link>
       </div>
     </div>
