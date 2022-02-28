@@ -27,8 +27,9 @@ const InspoContainer = (props: InspoContainerProps) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <div className="inspo-container">
-      <Link to="/canvas">
-        <img className="pencil-img" src={pencil} alt="pencil" />
+      <Link to="/canvas" >
+        <button className="pencil-img" onClick={(event) => props.clearInputs(event)}><img className="pencil-img" src={pencil} alt="pencil" />
+        </button>
       </Link>
       <button className="question-button" onClick={() => setModalOpen(true)}>
         <img className="mark-img" src={questionMark} alt="question mark" />
