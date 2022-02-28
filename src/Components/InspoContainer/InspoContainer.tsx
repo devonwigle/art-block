@@ -27,12 +27,20 @@ const InspoContainer = (props: InspoContainerProps) => {
   const [modalOpen, setModalOpen] = useState(false);
   return (
     <div className="inspo-container">
-      <Link to="/canvas">
-        <img className="pencil-img" src={pencil} alt="pencil" />
-      </Link>
-      <button className="question-button" onClick={() => setModalOpen(true)}>
-        <img className="mark-img" src={questionMark} alt="question mark" />
-      </button>
+      <div className="misc-buttons">
+            <Link to="/canvas">
+          <div className="pencil-group">
+              <img className="pencil-img" src={pencil} alt="pencil" />
+              <p className="pencil-text">Sketch</p>
+          </div>
+            </Link>
+        <div className="questionMark-group">
+          <button className="question-button" onClick={() => setModalOpen(true)}>
+            <img className="mark-img" src={questionMark} alt="question mark" />
+            <p className="questionMark-text">Information</p>
+          </button>
+        </div>
+      </div>
       <Modal
         className="Modal"
         isOpen={modalOpen}
@@ -61,9 +69,12 @@ const InspoContainer = (props: InspoContainerProps) => {
           image.
         </p>
         <p className="modal-text">
-          Finally, to see all your saved Inspirations, click the See my
+          To see all your saved Inspirations, click the See my
           Inspiration button to head to the favorites page! We hope to bring you
           some inspiration for your next work of art!
+        </p>
+        <p className="modal-text">
+          If you just want to sketch, click the pencil.  If you want to see an inspiration while you sketch, checkout your saved inspirations and click the pencil under your inspiration.
         </p>
         <p className="modal-text">
           Click the ESC key or outside of this popup to leave this page.
