@@ -88,3 +88,14 @@ h1 {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
+.pencil-img {
+  padding: 0;
+  border: none;
+  background: none;
+  position: absolute;
+  top: 10%;
+  right: 1%;
+  height: 50px;
+  width: 50px;
+}
