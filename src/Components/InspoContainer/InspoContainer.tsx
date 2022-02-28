@@ -91,7 +91,7 @@ const InspoContainer = (props: InspoContainerProps) => {
           Save Inspiration
         </button>
         <button
-          className="inspo-buttons"
+          className="inspo-buttons reinspire-button"
           onClick={(event) => props.onReinspire(event)}
         >
           Reinspire

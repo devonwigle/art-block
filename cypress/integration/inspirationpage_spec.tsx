@@ -44,23 +44,22 @@ describe("Load Inspiration page and render the necessary elements", () => {
   it("Should be able to visit the page and render the hexcode", () => {
     cy.get("p.hexcode").should("be.visible");
   });
-  it("Should be able to check 'This Inspires Me' checkboxes", () => {
+  it("Should be able to check 'Lock This Inspiration' checkboxes", () => {
     cy.get("div.image-box").get("[type='checkbox']").check();
   });
-  // it("Should be able to uncheck 'This Inspires Me' checkboxes", () => {
-  //   cy.get("div.image-box")
-  //     .get("[type='checkbox']")
-  //     .check()
-  //     .get("div.image-box")
-  //     .get("[type='checkbox']")
-  //     .uncheck();
-  // });
-  // it("Should render 'Save Inspiration', 'Reinspire', and 'See all Favorites' button", () => {
-  //   cy.get("button").siblings();
-  //   cy.get("button").first().contains("Save Inspiration");
-  //   cy.get("button").first().next().contains("Reinspire");
-  //   cy.get("button").last().contains("See My Inspirations");
-  // });
+  it("Should be able to uncheck 'Lock This Inspiration' checkboxes", () => {
+    cy.get("div.image-box")
+      .get("[type='checkbox']")
+      .check()
+      .get("div.image-box")
+      .get("[type='checkbox']")
+      .uncheck();
+  });
+  it("Should render 'Save Inspiration', 'Reinspire', and 'See all Favorites' button", () => {
+    cy.get("button.save-button")
+    cy.get("button.reinspire-button")
+    cy.get("button.see-inspo-button")
+  });
   it("Should be able to click pencil button and go to canvas page", () => {
     cy.get(".pencil-img")
     .click()
