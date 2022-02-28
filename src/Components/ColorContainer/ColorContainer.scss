@@ -1,0 +1,11 @@
+@import '../../scss/_variables.scss';
+@import '../../scss/_mixins.scss';
+
+.color-box {
+  @include display-jContent-aItems(flex, center, center);
+}
+
+.hexcode {
+  @include font-family-size(Bebas Neue, 32px);
+  text-shadow: 0 0 4px white, 0 0 9px white, 0 0 19px white, 0 0 25px white;
+}

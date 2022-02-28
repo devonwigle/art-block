@@ -1,5 +1,5 @@
 import React from "react";
-import "./SmallLogo.css";
+import "./SmallLogo.scss";
 import { Link } from "react-router-dom";
 
 const SmallLogo = () => {

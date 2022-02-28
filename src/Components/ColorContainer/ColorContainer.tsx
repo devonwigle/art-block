@@ -1,4 +1,4 @@
-import "./ColorContainer.css";
+import "./ColorContainer.scss";
 import CSS from "csstype";
 
 type ColorContainerProps = {

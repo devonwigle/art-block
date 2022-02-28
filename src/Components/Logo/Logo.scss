@@ -1,0 +1,22 @@
+@import '../../scss/_variables.scss';
+@import '../../scss/_mixins.scss';
+
+.top-line {
+  @include font-family-size-weight($tangerine, 144px, 400);
+  color: $black;
+  margin: 0;
+}
+
+.top-line-2 {
+  @include font-family-size($ubuntu, 144px);
+  color: $black;
+  margin: 0;
+}
+
+.bottom-line {
+  @include font-family-size-weight($roboto, 36px, 300);
+  color: $black;
+  margin-top: -31px;
+}
+
+

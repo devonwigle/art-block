@@ -1,0 +1,40 @@
+@import '../../scss/_variables.scss';
+@import '../../scss/_mixins.scss';
+
+.favorite {
+  height: 100%;
+}
+
+.fav-header {
+  @include display-justContent(flex, space-between);
+}
+
+.get-more-inspo {
+  @include font-family-size($openSans, 16px);
+  cursor: pointer;
+  border: 3px solid;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  color: $black;
+  height: 38px;
+  letter-spacing: 2px;
+  margin-right: 20px;
+  margin-top: 26px;
+  padding: 0.25em 0.5em;
+  position: relative;
+  text-transform: uppercase;
+  touch-action: manipulation;
+}
+
+.inspo-group-div {
+  @include display-justContent(flex, space-evenly);
+  flex-wrap: wrap;
+}
+
+.small-logo-loca {
+  display: flex;
+  margin-left: 10px;
+}
+
+.announce-title {
+  @include font-family-size(Bebas Neue, 54px);
+}

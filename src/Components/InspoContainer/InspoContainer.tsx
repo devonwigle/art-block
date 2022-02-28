@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import PictureContainer from "../PictureContainer/PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
-import "./InspoContainer.css";
+import "./InspoContainer.scss";
 import { PicsumImage, Word } from "../../apiCalls/apiCalls";
 import ColorContainer from "../ColorContainer/ColorContainer";
 import { Link } from "react-router-dom";
-import mark1 from "./mark1.png";
+import questionMark from "./questionMark.png";
 import pencil from "../../pencil.png";
 import Modal from "react-modal";
+
 
 type InspoContainerProps = {
   picture: PicsumImage | string;
@@ -30,7 +31,7 @@ const InspoContainer = (props: InspoContainerProps) => {
         <img className="pencil-img" src={pencil} alt="pencil" />
       </Link>
       <button className="question-button" onClick={() => setModalOpen(true)}>
-        <img className="mark-img" src={mark1} alt="question mark" />
+        <img className="mark-img" src={questionMark} alt="question mark" />
       </button>
       <Modal
         className="Modal"

@@ -1,10 +1,10 @@
 import { render } from "@testing-library/react";
 import React from "react";
 import { Link } from "react-router-dom";
-import "./InspoGroup.css";
+import "./InspoGroup.scss";
 import { PicsumImage } from "../../apiCalls/apiCalls";
 import pencil from "../../pencil.png";
-import thickBrush from "../../thickBrush.png";
+import thickBrush from "./thickBrush.png";
 
 type InspoGroupProps = {
   image: PicsumImage;

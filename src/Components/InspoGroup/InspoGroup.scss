@@ -1,0 +1,45 @@
+@import '../../scss/_mixins.scss';
+@import '../../scss/_variables.scss';
+
+.grouping {
+  margin: 20px;
+}
+
+.group-color,
+.small-img {
+  @include height-width (200px, 300px);
+}
+
+.group-color {
+  background: $white;
+}
+
+.group-hexcode {
+  text-shadow: 0 0 4px $white, 0 0 9px $white, 0 0 19px $white, 0 0 25px $white;
+  font-size: 25px;
+}
+
+.group-hex-div {
+  @include display-jContent-aContent-flexDir(flex, center, center, row);
+  padding-top: 60px;
+}
+
+.draw-button,
+.delete-button {
+  cursor: pointer;
+  background: $mainColor;
+  border: none;
+}
+
+.button-image {
+  @include height-width(auto, 20px);
+  background: $mainColor;
+}
+
+.group-word {
+  font-size: 36px;
+}
+
+.grouping {
+  border: 2px solid $black;
+}

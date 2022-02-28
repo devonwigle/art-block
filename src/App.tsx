@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Route, Link, Switch, RouteComponentProps } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import Logo from "./Components/Logo/Logo";
 import InspoContainer from "./Components/InspoContainer/InspoContainer";
 import { getImage, fetchWord, PicsumImage, Word } from "./apiCalls/apiCalls";

@@ -1,0 +1,101 @@
+@import '../../scss/_mixins.scss';
+@import '../../scss/variables.scss';
+
+.landing-page {
+  display: grid;
+}
+
+.landing-button {
+  @include font-family-size(Tangerine, 72px);
+  border: none;
+  cursor: pointer;
+  background-color: $mainColor;
+  text-decoration: underline 2px;
+}
+
+.landing-paragraphs {
+  @include font-family-size(Roboto, 33px);
+  margin: 2% 18% 4% 18%;
+  position: relative;
+}
+
+.main-div {
+  @include height-width(200px, 200px);
+  margin-left: 40%;
+  margin-top: 15%;
+  perspective: 1000px;
+  perspective-origin: 50% 100px;
+  position: absolute; 
+}
+
+.para-box {
+  isolation: isolate;
+}
+
+.cube-div {
+  width: 200px;   
+  transform-style: preserve-3d; 
+  animation: rotate-diagonal-2 30s infinite linear;
+}
+
+.cube-div div {
+  position: absolute;
+  @include height-width(200px, 200px);
+  opacity: 0.7;
+  color: white;
+}
+
+.front {
+  transform: translateZ(100px);
+  background: $lightBlue;
+}
+
+
+.back {
+  transform: rotateY(180deg) translateZ(100px);
+  background: $lightPurple;
+}
+
+.left {
+  transform: rotateY(-90deg) translateX(-100px);
+  transform-origin: left;
+  background: $lightYellow; 
+}
+
+.right {
+  transform: rotateY(90deg) translateX(100px);
+  transform-origin: right;
+  background: $lightGreen;   
+}
+
+.top {
+  transform: rotateX(-90deg) translateY(-100px);
+  transform-origin: top;
+  background: $lightOrange;
+}
+
+.bottom {
+  transform: rotateX(90deg) translateY(100px);
+  transform-origin: bottom;
+  background: $lightRed; 
+}
+
+@keyframes rotate-diagonal-2 {
+  0% {
+    transform: rotate3d(0, 1, 1, 0deg);
+  }
+  25% {
+    transform: rotate3d(0, 1, 1, 180deg); 
+  }
+  50% {
+    transform: rotate3d(0, 1, 1, 360deg);
+  }
+  75% {
+    transform: rotate3d(0, 1, 1, 180deg);
+  }
+  100% {
+    transform: rotate3d(0, 1, 1, 0deg);
+  }
+}
+
+

@@ -1,0 +1,34 @@
+@mixin font-family-size($family, $size) {
+  font-family: $family;
+  font-size: $size;
+}
+
+@mixin font-family-size-weight($family, $size, $weight) {
+  font-family: $family;
+  font-size: $size;
+  font-weight: $weight;
+}
+
+@mixin display-justContent($display, $position) {
+  display: $display;
+  justify-content: $position;
+}
+
+@mixin display-jContent-aContent-flexDir($display, $justPosition, $alignPosition, $flexDir) {
+  display: $display;
+  justify-content: $justPosition;
+  align-content: $alignPosition;
+  flex-direction: $flexDir;
+}
+
+@mixin display-jContent-aItems($display, $justPosition, $alignItemPosition) {
+  display: $display;
+  justify-content: $justPosition;
+  align-items: $alignItemPosition;
+}
+
+
+@mixin height-width($height, $width) {
+  height: $height;
+  width: $width;
+}
