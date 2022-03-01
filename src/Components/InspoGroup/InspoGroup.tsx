@@ -1,5 +1,3 @@
-import { render } from "@testing-library/react";
-import React from "react";
 import { Link } from "react-router-dom";
 import "./InspoGroup.scss";
 import { PicsumImage } from "../../apiCalls/apiCalls";

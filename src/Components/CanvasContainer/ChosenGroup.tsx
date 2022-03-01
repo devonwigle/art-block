@@ -1,19 +1,13 @@
-import React from 'react'
-import { PicsumImage } from '../../apiCalls/apiCalls'
+import { PicsumImage } from "../../apiCalls/apiCalls";
 
 export type ChosenGroupProps = {
   image: PicsumImage;
   color: string;
   word: string;
   id: number;
-}
+};
 
-const ChosenGroup = ({
-  image,
-  color,
-  word,
-  id,
-}: ChosenGroupProps) => {
+const ChosenGroup = ({ image, color, word, id }: ChosenGroupProps) => {
   return (
     <div className="grouping">
       <img className="small-img" src={image.download_url} alt="" />

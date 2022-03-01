@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import { Component } from "react";
 import "./FavoritesContainer.scss";
 import { PicsumImage } from "../../apiCalls/apiCalls";
 import SmallLogo from "../../Components/Logo/SmallLogo";
