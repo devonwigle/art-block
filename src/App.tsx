@@ -22,6 +22,8 @@ type AppState = {
   pictureIsLocked: boolean;
   colorIsLocked: boolean;
   wordAPIError: string;
+  pictureLoading: boolean;
+  wordLoading: boolean;
 };
 
 function isPicsumImage(value: PicsumImage | string): value is PicsumImage {
@@ -42,6 +44,8 @@ class App extends Component<any, AppState> {
       pictureIsLocked: false,
       colorIsLocked: false,
       wordAPIError: "",
+      pictureLoading: true,
+      wordLoading: true,
     };
   }
 
@@ -66,11 +70,11 @@ class App extends Component<any, AppState> {
     }
 
     if (!this.state.pictureIsLocked) {
-      this.setState({ error: false });
+      this.setState({ error: false, pictureLoading: true });
       let randNum = Math.floor(Math.random() * 1084);
       getImage(randNum)
         .then((result: any) => {
-          this.setState({ image: result });
+          this.setState({ image: result, pictureLoading: false });
         })
         .catch((error: any) => {
           this.setState({ error: true });
@@ -78,10 +82,14 @@ class App extends Component<any, AppState> {
     }
 
     if (!this.state.wordIsLocked) {
-      this.setState({ error: false });
+      this.setState({ error: false, wordLoading: true });
       fetchWord()
         .then((word) => {
-          this.setState({ word: word.word, wordAPIError: "" });
+          this.setState({
+            word: word.word,
+            wordAPIError: "",
+            wordLoading: false,
+          });
         })
         .catch((error: any) => this.setState({ error: true }));
     }
@@ -167,6 +175,7 @@ class App extends Component<any, AppState> {
                 onColorLockClick={() => this.onColorLockClick()}
                 clearInputs={() => this.clearInputs()}
                 savedFavorites={this.state.favorites}
+                isLoading={this.state.pictureLoading && this.state.wordLoading}
               />
             </Route>
             <Route exact path="/favorites">

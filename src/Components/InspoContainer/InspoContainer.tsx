@@ -22,6 +22,7 @@ type InspoContainerProps = {
   onPictureLockClick: React.ChangeEventHandler<HTMLInputElement>;
   onColorLockClick: React.ChangeEventHandler<HTMLInputElement>;
   clearInputs: React.MouseEventHandler<HTMLButtonElement>;
+  isLoading: boolean;
 };
 
 const InspoContainer = (props: InspoContainerProps) => {
@@ -105,21 +106,25 @@ const InspoContainer = (props: InspoContainerProps) => {
           Click the ESC key or outside of this popup to leave this page.
         </p>
       </Modal>
-      <div className="contents">
-        <PictureContainer
-          picture={props.picture}
-          error={props.error}
-          onPictureLockClick={props.onPictureLockClick}
-        />
-        <WordContainer
-          word={props.word}
-          onWordLockClick={props.onWordLockClick}
-        />
-        <ColorContainer
-          color={props.color}
-          onColorLockClick={props.onColorLockClick}
-        />
-      </div>
+      {props.isLoading ? (
+        "Loading"
+      ) : (
+        <div className="contents">
+          <PictureContainer
+            picture={props.picture}
+            error={props.error}
+            onPictureLockClick={props.onPictureLockClick}
+          />
+          <WordContainer
+            word={props.word}
+            onWordLockClick={props.onWordLockClick}
+          />
+          <ColorContainer
+            color={props.color}
+            onColorLockClick={props.onColorLockClick}
+          />
+        </div>
+      )}
       <div className="buttons">
         <button
           className="inspo-buttons save-button"
