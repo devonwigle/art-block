@@ -8,12 +8,14 @@ import { Link } from "react-router-dom";
 import questionMark from "./questionMark.png";
 import pencil from "../../pencil.png";
 import Modal from "react-modal";
+import { FavoritesInspoContainer } from "../FavoritesContainer/FavoritesContainer";
 
 type InspoContainerProps = {
   picture: PicsumImage | string;
   color: string;
   word: string;
   error: boolean;
+  savedFavorites: FavoritesInspoContainer[];
   onReinspire: React.MouseEventHandler<HTMLButtonElement>;
   onSave: React.MouseEventHandler<HTMLButtonElement>;
   onWordLockClick: React.ChangeEventHandler<HTMLInputElement>;
@@ -24,8 +26,20 @@ type InspoContainerProps = {
 
 const InspoContainer = (props: InspoContainerProps) => {
   const [modalOpen, setModalOpen] = useState(false);
-  const [saved, setSaved] = useState(false);
-  const [disable, setDisable] = useState(false);
+
+  const alreadySaved = props.savedFavorites.some((savedFavorite) => {
+    let imageSame = false;
+    if (typeof props.picture !== "string") {
+      imageSame =
+        props.picture.download_url === savedFavorite.image.download_url;
+    }
+    return (
+      props.color === savedFavorite.color &&
+      props.word === savedFavorite.word &&
+      imageSame
+    );
+  });
+
   return (
     <div className="inspo-container">
       <div className="misc-buttons">
@@ -109,22 +123,14 @@ const InspoContainer = (props: InspoContainerProps) => {
       <div className="buttons">
         <button
           className="inspo-buttons save-button"
-          disabled={disable}
-          onClick={(event) => {
-            props.onSave(event);
-            setSaved(true);
-            setDisable(true);
-          }}
+          disabled={alreadySaved}
+          onClick={(event) => props.onSave(event)}
         >
-          {!saved ? "Save Inspiration" : "Saved!"}
+          {!alreadySaved ? "Save Inspiration" : "Saved!"}
         </button>
         <button
           className="inspo-buttons reinspire-button"
-          onClick={(event) => {
-            props.onReinspire(event);
-            setSaved(false);
-            setDisable(false);
-          }}
+          onClick={(event) => props.onReinspire(event)}
         >
           Reinspire
         </button>

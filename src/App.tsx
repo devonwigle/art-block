@@ -166,6 +166,7 @@ class App extends Component<any, AppState> {
                 onPictureLockClick={() => this.onPictureLockClick()}
                 onColorLockClick={() => this.onColorLockClick()}
                 clearInputs={() => this.clearInputs()}
+                savedFavorites={this.state.favorites}
               />
             </Route>
             <Route exact path="/favorites">
