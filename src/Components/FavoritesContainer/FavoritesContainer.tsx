@@ -11,6 +11,7 @@ export type FavoritesInspoContainer = {
   word: string;
   id: number;
 };
+
 interface FavoritesContainerProps {
   favorites: FavoritesInspoContainer[];
   deleteSavedInspo: any;
