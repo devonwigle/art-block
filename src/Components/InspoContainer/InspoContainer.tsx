@@ -24,6 +24,8 @@ type InspoContainerProps = {
 
 const InspoContainer = (props: InspoContainerProps) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [saved, setSaved] = useState(false);
+  const [disable, setDisable] = useState(false);
   return (
     <div className="inspo-container">
       <div className="misc-buttons">
@@ -107,13 +109,22 @@ const InspoContainer = (props: InspoContainerProps) => {
       <div className="buttons">
         <button
           className="inspo-buttons save-button"
-          onClick={(event) => props.onSave(event)}
+          disabled={disable}
+          onClick={(event) => {
+            props.onSave(event);
+            setSaved(true);
+            setDisable(true);
+          }}
         >
-          Save Inspiration
+          {!saved ? "Save Inspiration" : "Saved!"}
         </button>
         <button
           className="inspo-buttons reinspire-button"
-          onClick={(event) => props.onReinspire(event)}
+          onClick={(event) => {
+            props.onReinspire(event);
+            setSaved(false);
+            setDisable(false);
+          }}
         >
           Reinspire
         </button>
