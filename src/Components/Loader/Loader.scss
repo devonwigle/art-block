@@ -147,6 +147,11 @@ body {
   }
 }
 
+.loader-container {
+  display: flex;
+  height: 412px;
+  align-items: center;
+}
 .loader {
   box-sizing: content-box;
   height: 40px;

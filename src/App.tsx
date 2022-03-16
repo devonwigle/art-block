@@ -68,7 +68,7 @@ class App extends Component<any, AppState> {
     this.setState({ isLoading: true });
     setTimeout(() => {
       this.setState({ isLoading: false });
-    }, 1000);
+    }, 2000);
     if (!this.state.colorIsLocked) {
       this.setState({
         color: `${randomColor({ luminosity: "random", count: 1 })[0]}`,
