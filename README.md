@@ -114,3 +114,4 @@ See below for ways we stretched ourselves even further on this project:
 - [Pencil Image](https://www.pngrepo.com/svg/144021/pencil-drawing)
 - [Question Mark Image](https://www.vexels.com/png-svg/preview/152285/3d-question-mark-drawing)
 - [X Delete Image](https://www.onlygfx.com/12-grunge-x-brush-stroke-png-transparent/)
+- [Loader Image](https://codepen.io/chrysokitty/pen/ZbxwJX)
