@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PictureContainer from "../PictureContainer/PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
 import "./InspoContainer.scss";
@@ -113,7 +113,7 @@ const InspoContainer = (props: InspoContainerProps) => {
           Click the ESC key or outside of this popup to leave this page.
         </p>
       </Modal>
-      {(props.isLoading || !imageLoaded) && "Loading"}
+      {(props.isLoading || !imageLoaded) && <Loader />}
 
       <div
         className="contents"
