@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PictureContainer from "../PictureContainer/PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
 import "./InspoContainer.scss";
@@ -27,6 +27,11 @@ type InspoContainerProps = {
 
 const InspoContainer = (props: InspoContainerProps) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    setImageLoaded(false);
+  }, [props.picture]);
 
   const alreadySaved = props.savedFavorites.some((savedFavorite) => {
     let imageSame = false;
@@ -106,25 +111,32 @@ const InspoContainer = (props: InspoContainerProps) => {
           Click the ESC key or outside of this popup to leave this page.
         </p>
       </Modal>
-      {props.isLoading ? (
-        "Loading"
-      ) : (
-        <div className="contents">
-          <PictureContainer
-            picture={props.picture}
-            error={props.error}
-            onPictureLockClick={props.onPictureLockClick}
-          />
-          <WordContainer
-            word={props.word}
-            onWordLockClick={props.onWordLockClick}
-          />
-          <ColorContainer
-            color={props.color}
-            onColorLockClick={props.onColorLockClick}
-          />
-        </div>
-      )}
+      {(props.isLoading || !imageLoaded) && "Loading"}
+
+      <div
+        className="contents"
+        style={{
+          visibility: props.isLoading || !imageLoaded ? "hidden" : "visible",
+        }}
+      >
+        <PictureContainer
+          picture={props.picture}
+          error={props.error}
+          onPictureLockClick={props.onPictureLockClick}
+          onLoad={() => {
+            setImageLoaded(true);
+          }}
+        />
+        <WordContainer
+          word={props.word}
+          onWordLockClick={props.onWordLockClick}
+        />
+        <ColorContainer
+          color={props.color}
+          onColorLockClick={props.onColorLockClick}
+        />
+      </div>
+
       <div className="buttons">
         <button
           className="inspo-buttons save-button"
