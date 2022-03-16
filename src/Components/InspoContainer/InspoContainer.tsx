@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PictureContainer from "../PictureContainer/PictureContainer";
 import WordContainer from "../WordContainer/WordContainer";
 import "./InspoContainer.scss";
@@ -9,6 +9,7 @@ import questionMark from "./questionMark.png";
 import pencil from "../../pencil.png";
 import Modal from "react-modal";
 import { FavoritesInspoContainer } from "../FavoritesContainer/FavoritesContainer";
+import Loader from "../Loader/Loader";
 
 type InspoContainerProps = {
   picture: PicsumImage | string;
@@ -22,10 +23,21 @@ type InspoContainerProps = {
   onPictureLockClick: React.ChangeEventHandler<HTMLInputElement>;
   onColorLockClick: React.ChangeEventHandler<HTMLInputElement>;
   clearInputs: React.MouseEventHandler<HTMLButtonElement>;
+  isLoading: boolean;
 };
 
 const InspoContainer = (props: InspoContainerProps) => {
   const [modalOpen, setModalOpen] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  useEffect(() => {
+    if (typeof props.picture !== "string" && !props.error) {
+      setImageLoaded(false);
+    }
+  }, [props.picture]);
+  console.log(imageLoaded, !props.isLoading);
+
+  const loadingRender = props.isLoading || !imageLoaded;
 
   const alreadySaved = props.savedFavorites.some((savedFavorite) => {
     let imageSame = false;
@@ -105,11 +117,16 @@ const InspoContainer = (props: InspoContainerProps) => {
           Click the ESC key or outside of this popup to leave this page.
         </p>
       </Modal>
-      <div className="contents">
+      {loadingRender && <Loader />}
+
+      <div className={`contents ${loadingRender ? "hidden" : ""}`}>
         <PictureContainer
           picture={props.picture}
           error={props.error}
           onPictureLockClick={props.onPictureLockClick}
+          onLoad={() => {
+            setImageLoaded(true);
+          }}
         />
         <WordContainer
           word={props.word}
@@ -120,6 +137,7 @@ const InspoContainer = (props: InspoContainerProps) => {
           onColorLockClick={props.onColorLockClick}
         />
       </div>
+
       <div className="buttons">
         <button
           className="inspo-buttons save-button"
