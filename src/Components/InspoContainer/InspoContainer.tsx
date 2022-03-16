@@ -9,6 +9,7 @@ import questionMark from "./questionMark.png";
 import pencil from "../../pencil.png";
 import Modal from "react-modal";
 import { FavoritesInspoContainer } from "../FavoritesContainer/FavoritesContainer";
+import Loader from "../Loader/Loader";
 
 type InspoContainerProps = {
   picture: PicsumImage | string;
@@ -32,6 +33,7 @@ const InspoContainer = (props: InspoContainerProps) => {
   useEffect(() => {
     setImageLoaded(false);
   }, [props.picture]);
+  console.log(imageLoaded, !props.isLoading);
 
   const alreadySaved = props.savedFavorites.some((savedFavorite) => {
     let imageSame = false;
