@@ -24,6 +24,7 @@ type AppState = {
   wordAPIError: string;
   pictureLoading: boolean;
   wordLoading: boolean;
+  isLoading: boolean;
 };
 
 function isPicsumImage(value: PicsumImage | string): value is PicsumImage {
@@ -46,6 +47,7 @@ class App extends Component<any, AppState> {
       wordAPIError: "",
       pictureLoading: true,
       wordLoading: true,
+      isLoading: true,
     };
   }
 
@@ -63,6 +65,10 @@ class App extends Component<any, AppState> {
   }
 
   generateRandomState() {
+    this.setState({ isLoading: true });
+    setTimeout(() => {
+      this.setState({ isLoading: false });
+    }, 1000);
     if (!this.state.colorIsLocked) {
       this.setState({
         color: `${randomColor({ luminosity: "random", count: 1 })[0]}`,
@@ -77,7 +83,7 @@ class App extends Component<any, AppState> {
           this.setState({ image: result, pictureLoading: false });
         })
         .catch((error: any) => {
-          this.setState({ error: true });
+          this.setState({ error: true, pictureLoading: false });
         });
     }
 
@@ -91,7 +97,9 @@ class App extends Component<any, AppState> {
             wordLoading: false,
           });
         })
-        .catch((error: any) => this.setState({ error: true }));
+        .catch((error: any) =>
+          this.setState({ error: true, wordLoading: false })
+        );
     }
   }
 
@@ -175,7 +183,11 @@ class App extends Component<any, AppState> {
                 onColorLockClick={() => this.onColorLockClick()}
                 clearInputs={() => this.clearInputs()}
                 savedFavorites={this.state.favorites}
-                isLoading={this.state.pictureLoading && this.state.wordLoading}
+                isLoading={
+                  this.state.pictureLoading ||
+                  this.state.wordLoading ||
+                  this.state.isLoading
+                }
               />
             </Route>
             <Route exact path="/favorites">

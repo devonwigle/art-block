@@ -19,7 +19,9 @@ function renderPicture(
   onLoad: () => void
 ): JSX.Element {
   if (!error && isPicsumImage(picture)) {
-    return <img src={picture.download_url} alt="" onLoad={onLoad} />;
+    return (
+      <img src={picture.download_url} alt="" onLoad={onLoad} onError={onLoad} />
+    );
   } else {
     return <ErrorContainer />;
   }

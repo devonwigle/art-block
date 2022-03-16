@@ -31,9 +31,13 @@ const InspoContainer = (props: InspoContainerProps) => {
   const [imageLoaded, setImageLoaded] = useState(false);
 
   useEffect(() => {
-    setImageLoaded(false);
+    if (typeof props.picture !== "string" && !props.error) {
+      setImageLoaded(false);
+    }
   }, [props.picture]);
   console.log(imageLoaded, !props.isLoading);
+
+  const loadingRender = props.isLoading || !imageLoaded;
 
   const alreadySaved = props.savedFavorites.some((savedFavorite) => {
     let imageSame = false;
@@ -113,14 +117,9 @@ const InspoContainer = (props: InspoContainerProps) => {
           Click the ESC key or outside of this popup to leave this page.
         </p>
       </Modal>
-      {(props.isLoading || !imageLoaded) && <Loader />}
+      {loadingRender && <Loader />}
 
-      <div
-        className="contents"
-        style={{
-          visibility: props.isLoading || !imageLoaded ? "hidden" : "visible",
-        }}
-      >
+      <div className={`contents ${loadingRender ? "hidden" : ""}`}>
         <PictureContainer
           picture={props.picture}
           error={props.error}
