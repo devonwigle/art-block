@@ -116,3 +116,33 @@ h1 {
 .hidden {
   display: none;
 }
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .question-button,
+  .questionMark-text {
+    height: 30px;
+    width: 30px;
+    position: relative;
+  }
+  .pencil-button,
+  .pencil-img {
+    height: 40px;
+    width: 40px;
+    position: relative;
+  }
+  .misc-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  .contents {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .buttons {
+    flex-direction: column;
+  }
+}
