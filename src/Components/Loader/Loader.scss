@@ -19,9 +19,9 @@ body {
   letter-spacing: 1px;
 }
 
-*,
-*:after,
-*:before {
+.loader-container,
+.loader-container:after,
+.loader-continer:before {
   box-sizing: border-box;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;

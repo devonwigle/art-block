@@ -1,8 +1,8 @@
-@import '../../scss/_mixins.scss';
-@import '../../scss/_variables.scss';
+@import "../../scss/_mixins.scss";
+@import "../../scss/_variables.scss";
 
 .canvas-container {
-  @include height-width(100%, 100%)
+  @include height-width(100%, 100%);
 }
 
 .wrapper-canvas-tools {
@@ -36,7 +36,8 @@
   @include font-family-size($openSans, 16px);
   cursor: pointer;
   border: 3px solid;
-  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
   color: $black;
   letter-spacing: 2px;
   margin-top: 18px;
@@ -45,4 +46,19 @@
   text-transform: uppercase;
   touch-action: manipulation;
   width: 150px;
+}
+
+@media screen and (min-device-width: 0px) and (max-device-width: 800px) {
+  .canvas-header {
+    flex-direction: column;
+  }
+  .get-more-inspo {
+    font-size: 12px;
+  }
+
+  .wrapper-canvas-tools {
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
 }

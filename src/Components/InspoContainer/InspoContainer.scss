@@ -116,3 +116,41 @@ h1 {
 .hidden {
   display: none;
 }
+
+@media screen and (min-device-width: 0px) and (max-device-width: 1205px) {
+  .question-button,
+  .mark-img {
+    height: 48px;
+    width: 69px;
+    position: relative;
+  }
+  .pencil-button,
+  .pencil-img {
+    height: 39px;
+    width: 40px;
+    position: relative;
+  }
+  .questionMark-text,
+  .pencil-text {
+    height: 45px;
+    color: #000000;
+  }
+  .misc-buttons {
+    display: flex;
+    justify-content: center;
+  }
+  .contents {
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+  }
+  .buttons {
+    flex-direction: column;
+  }
+  .questionMark-group {
+    display: flex;
+  }
+}
