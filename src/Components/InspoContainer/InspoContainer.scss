@@ -55,18 +55,18 @@ button:hover {
   border-color: $black;
 }
 
-h1 {
-  @include font-family-size-weight($tangerine, 72px, 400px);
+.modal-title {
+  @include font-family-size-weight($tangerine, 54px, 400px);
   color: $black;
   margin: 0;
   padding: 10px;
 }
 
 .modal-text {
-  @include font-family-size-weight($roboto, 18px, 300px);
+  @include font-family-size-weight($roboto, 14px, 300px);
   color: $black;
-  margin-top: -15px;
-  padding: 10px;
+  margin-top: -10px;
+  padding: 5px;
 }
 
 .inspo-buttons {

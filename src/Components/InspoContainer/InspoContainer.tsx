@@ -35,7 +35,6 @@ const InspoContainer = (props: InspoContainerProps) => {
       setImageLoaded(false);
     }
   }, [props.picture]);
-  console.log(imageLoaded, !props.isLoading);
 
   const loadingRender = props.isLoading || !imageLoaded;
 
@@ -81,36 +80,28 @@ const InspoContainer = (props: InspoContainerProps) => {
         isOpen={modalOpen}
         onRequestClose={() => setModalOpen(false)}
       >
-        <h1>Instructions</h1>
+        <h1 className="modal-title">Instructions</h1>
         <p className="modal-text">
-          Welcome to ArtBlock! On this page, you can find inspiration in three
-          forms: an image, a descriptive word, or a color (hexcode provided).
+          Welcome to ArtBlock! Here you can find inspiration in three
+          forms: an image, a word, and a color (hexcode provided).
         </p>
         <p className="modal-text">
-          We'll create the first trio of inspiration for you. If you don't like
-          anything, feel free to click the Reinspire button to get a new image,
-          word, and color.
+          If you don't like the
+          inspirations, click the Reinspire button to get a new image, word, and color.
         </p>
         <p className="modal-text">
-          Perhaps you like an image, but not the word and color. Feel free to
-          select the checkbox under the image to "lock it" in place. When you
-          click Respire, it will hold onto that image until you uncheck the box.
-          You can lock any combination of the three.
+          Perhaps you like one or two inspirations. Select the checkbox under the inspiration to "lock" it in place. When you click Reinspire, that inspiration will remain until you uncheck the box.
         </p>
         <p className="modal-text">
-          If you're happy with your trio of inspiration, go ahead and click the
-          Save Inspiration button! You can save as many trios as you'd like. You
-          will unfortunately not be able to save if our app is unable to pull an
-          image.
+          If you're happy with your  inspirations, click the Save Inspiration button! You can save as many trios as you'd like. Unfortunately, you will not be able to save if an image is unavailable.
         </p>
         <p className="modal-text">
-          To see all your saved Inspirations, click the See my Inspiration
-          button to head to the favorites page! We hope to bring you some
-          inspiration for your next work of art!
+          To see your saved Inspirations, click the See My Inspirations
+          button! 
         </p>
         <p className="modal-text">
           If you just want to sketch, click the pencil. If you want to see an
-          inspiration while you sketch, checkout your saved inspirations and
+          inspiration while you sketch, go to your saved inspirations and
           click the pencil under your inspiration.
         </p>
         <p className="modal-text">
