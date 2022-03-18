@@ -120,14 +120,12 @@ button:hover {
 @media screen and (min-device-width: 0px) and (max-device-width: 1205px) {
   .question-button,
   .mark-img {
-    height: 48px;
-    width: 69px;
+    @include height-width(48px, 69px);
     position: relative;
   }
   .pencil-button,
   .pencil-img {
-    height: 39px;
-    width: 40px;
+    @include height-width(39px, 40px);
     position: relative;
   }
   .questionMark-text,
@@ -136,8 +134,7 @@ button:hover {
     color: #000000;
   }
   .misc-buttons {
-    display: flex;
-    justify-content: center;
+    @include display-justContent(flex, center);
   }
   .contents {
     display: flex;

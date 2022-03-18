@@ -11,12 +11,11 @@ import SmallLogo from "../Logo/SmallLogo";
 import ChosenGroup from "./ChosenGroup";
 import "./CanvasContainer.scss";
 
-
 const styles = {
   border: "0.0625rem solid #9c9c9c",
   borderRadius: "0.25rem",
   height: "90vh",
-  width: "1074px",
+  width: "95vw",
   margin: "0 auto",
 };
 
