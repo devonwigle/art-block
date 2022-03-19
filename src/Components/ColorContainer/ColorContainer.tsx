@@ -23,7 +23,7 @@ function ColorContainer(props: ColorContainerProps) {
           type="checkbox"
           name="color-checkbox"
         ></input>
-        Lock this inspiration
+        Lock this color
       </label>
     </div>
   );

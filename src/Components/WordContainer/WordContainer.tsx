@@ -18,7 +18,7 @@ const WordContainer = (props: WordContainerProps) => {
             type="checkbox"
             name="word-checkbox"
           ></input>
-          Lock this inspiration
+          Lock this word
         </label>
       </div>
     </div>

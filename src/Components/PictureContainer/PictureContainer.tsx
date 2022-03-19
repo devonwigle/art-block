@@ -39,7 +39,7 @@ const PictureContainer = (props: PictureContainerProps) => {
           type="checkbox"
           name="picture-checkbox"
         ></input>
-        Lock this inspiration
+        Lock this image
       </label>
     </div>
   );

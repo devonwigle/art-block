@@ -21,9 +21,9 @@ const LandingPage = () => {
         </div>
 
         <div className="para-box">  
-          <p>Are you feeling the unending agony that is being blocked from pursuing your artistic passions?</p>
+          <p>Are you feeling the unending agony of being creatively blocked from pursuing your artistic passions?</p>
           <p>We have found the solution for you.  Click below to have inspiration brought forth from the internet.</p>
-          <p>We will provide you a random color, image, and word(s) of inspiration.</p>
+          <p>We will provide you a random color, image, and word of inspiration.</p>
         </div>
       </div>
       <Link to="/inspiration">

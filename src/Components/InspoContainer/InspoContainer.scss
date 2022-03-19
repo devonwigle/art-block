@@ -55,18 +55,18 @@ button:hover {
   border-color: $black;
 }
 
-h1 {
-  @include font-family-size-weight($tangerine, 72px, 400px);
+.modal-title {
+  @include font-family-size-weight($tangerine, 54px, 400px);
   color: $black;
   margin: 0;
   padding: 10px;
 }
 
 .modal-text {
-  @include font-family-size-weight($roboto, 18px, 300px);
+  @include font-family-size-weight($roboto, 14px, 300px);
   color: $black;
-  margin-top: -15px;
-  padding: 10px;
+  margin-top: -10px;
+  padding: 5px;
 }
 
 .inspo-buttons {
@@ -120,14 +120,12 @@ h1 {
 @media screen and (min-device-width: 0px) and (max-device-width: 1205px) {
   .question-button,
   .mark-img {
-    height: 48px;
-    width: 69px;
+    @include height-width(48px, 69px);
     position: relative;
   }
   .pencil-button,
   .pencil-img {
-    height: 39px;
-    width: 40px;
+    @include height-width(39px, 40px);
     position: relative;
   }
   .questionMark-text,
@@ -136,8 +134,7 @@ h1 {
     color: #000000;
   }
   .misc-buttons {
-    display: flex;
-    justify-content: center;
+    @include display-justContent(flex, center);
   }
   .contents {
     display: flex;
